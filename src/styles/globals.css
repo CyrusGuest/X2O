@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply border-line;
+    border-color: theme('colors.line.DEFAULT');
   }
 
   html {
@@ -79,7 +79,8 @@
 
   /* Hairline top border used on Geist-style cards */
   .card {
-    @apply rounded-xl border border-line bg-surface;
+    @apply rounded-xl border bg-surface;
+    border-color: theme('colors.line.DEFAULT');
   }
 
   .card-hover {

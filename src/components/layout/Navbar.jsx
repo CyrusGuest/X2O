@@ -134,18 +134,34 @@ export default function Navbar() {
             className="overflow-hidden border-t border-line bg-canvas md:hidden"
           >
             <div className="space-y-1 px-4 py-4">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.hash ? `/${item.hash}` : item.href}
-                  className="block rounded-lg px-3 py-2.5 text-sm text-gray-300 hover:bg-surface hover:text-white"
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="pt-2">
+              {navigation.map((item) =>
+                item.hash ? (
+                  <a
+                    key={item.name}
+                    href={`/${item.hash}`}
+                    onClick={(e) => handleHash(e, item.hash)}
+                    className="block rounded-lg px-3 py-2.5 text-sm text-gray-300 hover:bg-surface hover:text-white"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block rounded-lg px-3 py-2.5 text-sm text-gray-300 hover:bg-surface hover:text-white"
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
+              <div className="mt-4 space-y-2 border-t border-line pt-4">
                 <Link to="/marketplace">
-                  <Button className="w-full">
+                  <Button variant="ghost" className="w-full justify-center">
+                    Sign in
+                  </Button>
+                </Link>
+                <Link to="/marketplace">
+                  <Button className="w-full justify-center">
                     Join Early Access
                     <ArrowRight size={15} />
                   </Button>

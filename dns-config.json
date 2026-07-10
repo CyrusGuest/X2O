@@ -1,0 +1,83 @@
+{
+  "Comment": "DNS configuration for xsolut.ai email",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "xsolut.ai",
+        "Type": "MX",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "10 mx1.improvmx.com"},
+          {"Value": "20 mx2.improvmx.com"}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "xsolut.ai",
+        "Type": "TXT",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "\"v=spf1 include:amazonses.com include:spf.improvmx.com ~all\""}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "_amazonses.xsolut.ai",
+        "Type": "TXT",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "\"ntCEHFane2C0sJnlp8BerY2Shg1FnJ8swSsPw4zAm5U=\""}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "ysfg67fhqutfft4lviunnamvgyk5vuak._domainkey.xsolut.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "ysfg67fhqutfft4lviunnamvgyk5vuak.dkim.amazonses.com"}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "pbeybuon4zcfehumrmvrawup6mdgzsmj._domainkey.xsolut.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "pbeybuon4zcfehumrmvrawup6mdgzsmj.dkim.amazonses.com"}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "tmvvojc4jl3zx35ijlywjhz4vb72bkd3._domainkey.xsolut.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "tmvvojc4jl3zx35ijlywjhz4vb72bkd3.dkim.amazonses.com"}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "_dmarc.xsolut.ai",
+        "Type": "TXT",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "\"v=DMARC1; p=quarantine; rua=mailto:admin@xsolut.ai\""}
+        ]
+      }
+    }
+  ]
+}

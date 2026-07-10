@@ -1,34 +1,45 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
+import Marketplace from './pages/Marketplace';
 import GlobalMap from './pages/GlobalMap';
-import DataCenterDetail from './pages/DataCenterDetail';
+import ProjectDetail from './pages/ProjectDetail';
+import Token from './pages/Token';
 
-function AnimatedRoutes() {
-  const location = useLocation();
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
+function AppRoutes() {
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/all" element={<GlobalMap />} />
-        <Route path="/datacenter/:id" element={<DataCenterDetail />} />
-        {/* Placeholder routes */}
-        <Route path="/investments" element={<Home />} />
-        <Route path="/watchlist" element={<Home />} />
-        <Route path="/analytics" element={<Home />} />
-        <Route path="/activity" element={<Home />} />
-      </Routes>
-    </AnimatePresence>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/marketplace" element={<Marketplace />} />
+      <Route path="/map" element={<GlobalMap />} />
+      <Route path="/token" element={<Token />} />
+      <Route path="/project/:id" element={<ProjectDetail />} />
+
+      {/* Backwards-compatible aliases */}
+      <Route path="/all" element={<Navigate to="/marketplace" replace />} />
+      <Route path="/datacenter/:id" element={<Navigate to="/marketplace" replace />} />
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
-        <AnimatedRoutes />
+        <AppRoutes />
       </Layout>
     </Router>
   );

@@ -6,6 +6,7 @@ import Marketplace from './pages/Marketplace';
 import GlobalMap from './pages/GlobalMap';
 import ProjectDetail from './pages/ProjectDetail';
 import Token from './pages/Token';
+import Endorsements from './pages/Endorsements';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ function AppRoutes() {
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/map" element={<GlobalMap />} />
       <Route path="/token" element={<Token />} />
+      <Route path="/endorsements" element={<Endorsements />} />
       <Route path="/project/:id" element={<ProjectDetail />} />
 
       {/* Backwards-compatible aliases */}

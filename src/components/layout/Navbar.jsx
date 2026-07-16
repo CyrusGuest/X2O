@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Marketplace', href: '/marketplace' },
   { name: 'Infrastructure Map', href: '/map' },
   { name: 'Token', href: '/token' },
+  { name: 'Endorsements', href: '/endorsements' },
   { name: 'Intelligence', hash: '#intelligence' },
   { name: 'Categories', hash: '#categories' },
 ];

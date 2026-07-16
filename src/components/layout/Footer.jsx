@@ -17,8 +17,8 @@ const columns = [
     links: [
       { name: 'Vision', href: '/#problem' },
       { name: 'Business Model', href: '/#business' },
+      { name: 'Endorsements', href: '/endorsements' },
       { name: 'Early Access', href: '/marketplace' },
-      { name: 'Research', href: '/#intelligence' },
     ],
   },
   {

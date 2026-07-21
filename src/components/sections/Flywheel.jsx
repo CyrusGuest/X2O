@@ -45,7 +45,7 @@ export default function Flywheel({ size = 380 }) {
               className={`relative overflow-hidden rounded-xl border ${
                 i === steps.length - 1
                   ? 'border-primary/40 bg-gradient-to-br from-primary/10 to-primary-light/10'
-                  : 'border-line bg-surface/80'
+                  : 'border-gray-300 bg-white dark:border-line dark:bg-surface/80'
               } backdrop-blur-sm p-4 transition-all`}
             >
               {/* Animated background gradient */}
@@ -63,7 +63,7 @@ export default function Flywheel({ size = 380 }) {
                   <div className={`flex h-8 w-8 items-center justify-center rounded-full ${
                     i === steps.length - 1
                       ? 'bg-gradient-to-br from-primary to-primary-light'
-                      : 'bg-surface border border-primary/30'
+                      : 'bg-white border border-primary/30 dark:bg-surface'
                   }`}>
                     <span className={`text-xs font-bold ${
                       i === steps.length - 1 ? 'text-white' : 'text-primary-light'
@@ -75,7 +75,7 @@ export default function Flywheel({ size = 380 }) {
                   {/* Step name */}
                   <div>
                     <p className={`text-sm font-medium ${
-                      i === steps.length - 1 ? 'text-white' : 'text-gray-200'
+                      i === steps.length - 1 ? 'text-white' : 'text-gray-900 dark:text-gray-200'
                     }`}>
                       {step.name}
                     </p>
@@ -95,11 +95,11 @@ export default function Flywheel({ size = 380 }) {
                     className={`rounded-full px-3 py-1 ${
                       i === steps.length - 1
                         ? 'bg-primary/20 border border-primary/40'
-                        : 'bg-surface border border-line'
+                        : 'bg-gray-100 border border-gray-300 dark:bg-surface dark:border-line'
                     }`}
                   >
                     <span className={`text-xs font-mono font-bold ${
-                      i === steps.length - 1 ? 'text-primary-light' : 'text-gray-400'
+                      i === steps.length - 1 ? 'text-primary-light' : 'text-gray-700 dark:text-gray-400'
                     }`}>
                       {step.metric}
                     </span>
@@ -122,7 +122,7 @@ export default function Flywheel({ size = 380 }) {
 
               {/* Progress bar for each step */}
               <motion.div
-                className="mt-3 h-0.5 bg-surface rounded-full overflow-hidden"
+                className="mt-3 h-0.5 bg-gray-200 dark:bg-surface rounded-full overflow-hidden"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -175,7 +175,7 @@ export default function Flywheel({ size = 380 }) {
         viewport={{ once: true }}
         transition={{ delay: 0.8 }}
       >
-        <div className="bg-canvas/90 backdrop-blur-md rounded-full px-4 py-2 border border-primary/30">
+        <div className="bg-white/90 dark:bg-canvas/90 backdrop-blur-md rounded-full px-4 py-2 border border-primary/30">
           <p className="text-[10px] uppercase tracking-wider text-primary-light font-bold">
             The Flywheel
           </p>

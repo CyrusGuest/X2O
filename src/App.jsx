@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
@@ -38,11 +39,13 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <AppRoutes />
-      </Layout>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }

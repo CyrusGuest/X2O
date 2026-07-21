@@ -9,35 +9,82 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Light mode styles */
+  html.light {
+    color-scheme: light;
+  }
+
+  html.light body {
+    @apply bg-white text-gray-900 antialiased font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Dark mode styles */
+  html.dark {
     color-scheme: dark;
   }
 
-  body {
+  html.dark body {
     @apply bg-canvas text-gray-100 antialiased font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Default body (fallback) */
+  body {
+    @apply antialiased font-sans;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
     background: rgba(0, 114, 245, 0.35);
+  }
+
+  html.light ::selection {
+    background: rgba(0, 114, 245, 0.2);
+    color: #000;
+  }
+
+  html.dark ::selection {
     color: #fff;
   }
 
-  /* Vercel-style thin scrollbar */
-  ::-webkit-scrollbar {
+  /* Vercel-style thin scrollbar - Dark */
+  html.dark ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
-  ::-webkit-scrollbar-track {
+  html.dark ::-webkit-scrollbar-track {
     background: transparent;
   }
-  ::-webkit-scrollbar-thumb {
+  html.dark ::-webkit-scrollbar-thumb {
     background: #2e2e2e;
     border-radius: 999px;
     border: 2px solid #000;
   }
-  ::-webkit-scrollbar-thumb:hover {
+  html.dark ::-webkit-scrollbar-thumb:hover {
     background: #3d3d3d;
+  }
+
+  /* Vercel-style thin scrollbar - Light */
+  html.light ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  html.light ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  html.light ::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 999px;
+    border: 2px solid #fff;
+  }
+  html.light ::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
   }
 }
 
@@ -79,7 +126,12 @@
 
   /* Hairline top border used on Geist-style cards */
   .card {
-    @apply rounded-xl border bg-surface;
+    @apply rounded-xl border bg-white dark:bg-surface;
+    border-color: theme('colors.gray.300');
+  }
+
+  html.dark .card {
+    @apply bg-surface;
     border-color: theme('colors.line.DEFAULT');
   }
 
@@ -87,6 +139,11 @@
     @apply transition-all duration-200;
   }
   .card-hover:hover {
+    border-color: #a3a3a3;
+    background: #ffffff;
+  }
+
+  html.dark .card-hover:hover {
     border-color: #4d4d4d;
     background: #0f0f0f;
   }

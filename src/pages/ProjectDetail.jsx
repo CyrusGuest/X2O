@@ -83,8 +83,8 @@ export default function ProjectDetail() {
     return (
       <div className="flex min-h-[70vh] items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight text-white">Project not found</h1>
-          <p className="mt-3 text-gray-300">This project doesn't exist in the marketplace.</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">Project not found</h1>
+          <p className="mt-3 text-gray-600 dark:text-gray-300">This project doesn't exist in the marketplace.</p>
           <Link to="/marketplace" className="mt-6 inline-block">
             <Button>Back to marketplace</Button>
           </Link>
@@ -108,14 +108,14 @@ export default function ProjectDetail() {
           <div className="mx-auto max-w-[1400px] px-4 pb-8 sm:px-6 lg:px-8">
             <Link
               to="/marketplace"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
+              className="mb-6 inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors hover:text-gray-900 dark:text-white"
             >
               <ArrowLeft size={15} /> Back to marketplace
             </Link>
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[12px] font-medium text-white backdrop-blur-sm">
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[12px] font-medium text-gray-900 dark:text-white backdrop-blur-sm">
                     <CategoryIcon category={project.category} size={12} />
                     {cat?.label}
                   </span>
@@ -131,11 +131,11 @@ export default function ProjectDetail() {
                     {phaseMeta[phase].label}
                   </span>
                 </div>
-                <h1 className="mt-4 text-5xl font-semibold tracking-tightest text-white sm:text-6xl">
+                <h1 className="mt-4 text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-6xl">
                   {project.name}
                 </h1>
                 <p className="mt-3 flex items-center gap-2 text-lg text-gray-200">
-                  <MapPin size={18} className="text-gray-400" />
+                  <MapPin size={18} className="text-gray-500 dark:text-gray-400" />
                   {project.city}, {project.state}
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function ProjectDetail() {
       </div>
 
       {/* Tab bar */}
-      <div className="sticky top-16 z-30 border-b border-line bg-canvas/80 backdrop-blur-xl">
+      <div className="sticky top-16 z-30 border-b border-line bg-white dark:bg-canvas/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1400px] gap-1 overflow-x-auto px-4 no-scrollbar sm:px-6 lg:px-8">
           {tabs.map((t) => (
             <button
@@ -161,7 +161,7 @@ export default function ProjectDetail() {
               onClick={() => setTab(t.key)}
               className={cn(
                 'relative whitespace-nowrap px-4 py-3.5 text-sm transition-colors',
-                tab === t.key ? 'text-white' : 'text-gray-400 hover:text-gray-200'
+                tab === t.key ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-gray-400 hover:text-gray-200'
               )}
             >
               {t.label}
@@ -192,14 +192,14 @@ export default function ProjectDetail() {
           {/* Sidebar */}
           <div className="col-span-12 space-y-5 lg:col-span-4">
             <div className="card sticky top-32 p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-white">Participate</h3>
+              <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Participate</h3>
               <div className="mt-5 space-y-0">
                 <Row label="Funding" value={`${project.fundingPct}%`} valueClass="text-primary-light" />
                 <Row label="Stage" value={project.fundingStage} />
                 <Row label="Token" value={project.tokenSymbol} mono />
                 <Row label="Timeline" value={project.timeline} last />
               </div>
-              <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-surface-hover">
+              <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-white dark:bg-surface-hover">
                 <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light" style={{ width: `${project.fundingPct}%` }} />
               </div>
               <div className="mt-6 space-y-3">
@@ -218,7 +218,7 @@ export default function ProjectDetail() {
 
             <div className="card overflow-hidden">
               <WorldMap projects={[project]} height={220} />
-              <div className="border-t border-line px-4 py-3 text-xs text-gray-300">
+              <div className="border-t border-line px-4 py-3 text-xs text-gray-600 dark:text-gray-300">
                 {project.city}, {project.state} · {project.utility}
               </div>
             </div>
@@ -250,13 +250,13 @@ function Overview({ project }) {
           {facts.map((f) => {
             const Icon = f.icon;
             return (
-              <div key={f.label} className="flex items-start gap-3 rounded-xl border border-line bg-canvas p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line text-gray-200">
+              <div key={f.label} className="flex items-start gap-3 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-gray-300 dark:border-line text-gray-200">
                   <Icon size={16} />
                 </span>
                 <div>
-                  <p className="text-xs text-gray-400">{f.label}</p>
-                  <p className="mt-0.5 text-sm font-medium text-white">{f.value}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{f.label}</p>
+                  <p className="mt-0.5 text-sm font-medium text-gray-900 dark:text-white">{f.value}</p>
                 </div>
               </div>
             );
@@ -276,12 +276,12 @@ function Funding({ project }) {
       <Panel title="Funding progress">
         <div className="flex items-end justify-between">
           <div>
-            <p className="font-mono text-5xl font-semibold text-white">{project.fundingPct}%</p>
-            <p className="mt-1 text-sm text-gray-400">committed · {project.fundingStage}</p>
+            <p className="font-mono text-5xl font-semibold text-gray-900 dark:text-white">{project.fundingPct}%</p>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">committed · {project.fundingStage}</p>
           </div>
           <p className="font-mono text-xl text-primary-light">{formatNumber(project.capitalNeeded)}</p>
         </div>
-        <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-surface-hover">
+        <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-white dark:bg-surface-hover">
           <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light" style={{ width: `${project.fundingPct}%` }} />
         </div>
       </Panel>
@@ -292,12 +292,12 @@ function Funding({ project }) {
       </div>
       <Panel title="Instrument">
         <div className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-canvas font-mono text-sm text-primary-light">
+          <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-canvas font-mono text-sm text-primary-light">
             {project.tokenSymbol.slice(0, 2)}
           </span>
           <div>
-            <p className="font-mono font-medium text-white">{project.tokenSymbol}</p>
-            <p className="text-sm text-gray-400">Tokenized infrastructure record · {project.fundingStage}</p>
+            <p className="font-mono font-medium text-gray-900 dark:text-white">{project.tokenSymbol}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Tokenized infrastructure record · {project.fundingStage}</p>
           </div>
         </div>
       </Panel>
@@ -319,14 +319,14 @@ function Infrastructure({ project }) {
           {specs.map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.label} className="flex items-start gap-4 rounded-xl border border-line bg-canvas p-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-line text-gray-200">
+              <div key={s.label} className="flex items-start gap-4 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-300 dark:border-line text-gray-200">
                   <Icon size={20} />
                 </span>
                 <div>
-                  <p className="text-xs text-gray-400">{s.label}</p>
-                  <p className="mt-0.5 font-medium text-white">{s.value}</p>
-                  <p className="mt-0.5 text-xs text-gray-400">{s.note}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{s.label}</p>
+                  <p className="mt-0.5 font-medium text-gray-900 dark:text-white">{s.value}</p>
+                  <p className="mt-0.5 text-xs text-gray-500 dark:text-gray-400">{s.note}</p>
                 </div>
               </div>
             );
@@ -339,13 +339,13 @@ function Infrastructure({ project }) {
 
 function Suppliers({ project }) {
   const rows = suppliersByCat(project.category);
-  const statusCls = { Contracted: 'text-status-live', 'In diligence': 'text-status-building', Shortlisted: 'text-primary-light', RFQ: 'text-gray-400' };
+  const statusCls = { Contracted: 'text-status-live', 'In diligence': 'text-status-building', Shortlisted: 'text-primary-light', RFQ: 'text-gray-500 dark:text-gray-400' };
   return (
     <Panel title="Required vendors">
-      <div className="overflow-hidden rounded-xl border border-line">
+      <div className="overflow-hidden rounded-xl border border-gray-300 dark:border-line">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-line bg-canvas text-left text-xs uppercase tracking-wide text-gray-400">
+            <tr className="border-b border-line bg-white dark:bg-canvas text-left text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
               <th className="px-4 py-3 font-medium">Vendor</th>
               <th className="px-4 py-3 font-medium">Role</th>
               <th className="px-4 py-3 font-medium">Status</th>
@@ -354,14 +354,14 @@ function Suppliers({ project }) {
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} className={cn('bg-surface', i !== rows.length - 1 && 'border-b border-line')}>
-                <td className="px-4 py-3 font-medium text-white">
+              <tr key={i} className={cn('bg-white dark:bg-surface', i !== rows.length - 1 && 'border-b border-line')}>
+                <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">
                   <span className="flex items-center gap-2">
-                    <Truck size={14} className="text-gray-400" />
+                    <Truck size={14} className="text-gray-500 dark:text-gray-400" />
                     {r.name}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-gray-300">{r.role}</td>
+                <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{r.role}</td>
                 <td className={cn('px-4 py-3 font-medium', statusCls[r.status])}>{r.status}</td>
                 <td className="px-4 py-3 text-right font-mono text-gray-200">{r.lead}</td>
               </tr>
@@ -380,8 +380,8 @@ function Permits() {
         {permitsList.map((p) => {
           const { Icon, cls } = permitIcon[p.status];
           return (
-            <div key={p.name} className="flex items-center justify-between rounded-xl border border-line bg-canvas px-4 py-3">
-              <span className="flex items-center gap-3 text-sm text-white">
+            <div key={p.name} className="flex items-center justify-between rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas px-4 py-3">
+              <span className="flex items-center gap-3 text-sm text-gray-900 dark:text-white">
                 <Icon size={16} className={cls} />
                 {p.name}
               </span>
@@ -405,20 +405,20 @@ function Risk({ rp, level }) {
   const label = (pct) => (pct < 35 ? 'Low' : pct < 55 ? 'Medium' : 'High');
   return (
     <Panel title="Risk analysis">
-      <div className="mb-6 flex items-center gap-3 rounded-xl border border-line bg-canvas p-4">
+      <div className="mb-6 flex items-center gap-3 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-4">
         <ShieldCheck size={20} className="text-primary-light" />
         <p className="text-sm text-gray-200">
-          Overall risk rating: <span className="font-semibold text-white">{level}</span>
+          Overall risk rating: <span className="font-semibold text-gray-900 dark:text-white">{level}</span>
         </p>
       </div>
       <div className="space-y-5">
         {bars.map((b) => (
           <div key={b.label}>
             <div className="mb-1.5 flex items-center justify-between text-sm">
-              <span className="text-gray-300">{b.label}</span>
+              <span className="text-gray-600 dark:text-gray-300">{b.label}</span>
               <span className="text-gray-200">{label(b.pct)}</span>
             </div>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-hover">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white dark:bg-surface-hover">
               <div className={cn('h-full rounded-full', color(b.pct))} style={{ width: `${b.pct}%` }} />
             </div>
           </div>
@@ -433,25 +433,25 @@ function Tokenization({ project }) {
     <div className="space-y-6">
       <Panel title="Infrastructure token">
         <div className="flex items-center gap-4">
-          <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-line bg-canvas font-mono text-primary-light">
+          <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas font-mono text-primary-light">
             {project.tokenSymbol.slice(0, 2)}
           </span>
           <div>
-            <p className="font-mono text-lg font-medium text-white">{project.tokenSymbol}</p>
-            <p className="text-sm text-gray-400">A secure digital representation of this project's records.</p>
+            <p className="font-mono text-lg font-medium text-gray-900 dark:text-white">{project.tokenSymbol}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">A secure digital representation of this project's records.</p>
           </div>
         </div>
       </Panel>
       <Panel title="What tokenization enables">
         <div className="grid gap-3 sm:grid-cols-2">
           {['Faster settlement', 'Transparent records', 'Digital ownership history', 'Project verification', 'Reduced paperwork', 'Improved interoperability'].map((b) => (
-            <div key={b} className="flex items-center gap-3 rounded-xl border border-line bg-canvas p-3.5 text-sm text-gray-200">
+            <div key={b} className="flex items-center gap-3 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-3.5 text-sm text-gray-200">
               <Layers size={15} className="text-primary-light" />
               {b}
             </div>
           ))}
         </div>
-        <p className="mt-4 rounded-xl border border-line bg-canvas p-4 text-xs leading-relaxed text-gray-500">
+        <p className="mt-4 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-4 text-xs leading-relaxed text-gray-500">
           Any investment-related functionality would require appropriate legal and regulatory compliance.
         </p>
       </Panel>
@@ -465,7 +465,7 @@ function Intelligence() {
       <Panel title="Data this project contributes">
         <div className="flex flex-wrap gap-2.5">
           {intelligenceSignals.slice(0, 12).map((s) => (
-            <span key={s} className="flex items-center gap-1.5 rounded-full border border-line bg-canvas px-3 py-1.5 text-[13px] text-gray-200">
+            <span key={s} className="flex items-center gap-1.5 rounded-full border border-gray-300 dark:border-line bg-white dark:bg-canvas px-3 py-1.5 text-[13px] text-gray-200">
               <Database size={12} className="text-primary-light" />
               {s}
             </span>
@@ -488,7 +488,7 @@ function Intelligence() {
 function Panel({ title, children }) {
   return (
     <div className="card p-7">
-      <h2 className="text-xl font-semibold tracking-tight text-white">{title}</h2>
+      <h2 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{title}</h2>
       <div className="mt-5">{children}</div>
     </div>
   );
@@ -496,9 +496,9 @@ function Panel({ title, children }) {
 
 function HeroStat({ label, value, sub }) {
   return (
-    <div className="min-w-[150px] rounded-xl border border-line bg-surface/80 p-5 backdrop-blur-md">
-      <p className="text-xs text-gray-400">{label}</p>
-      <p className="mt-1 font-mono text-2xl font-semibold text-white">{value}</p>
+    <div className="min-w-[150px] rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-surface/80 p-5 backdrop-blur-md">
+      <p className="text-xs text-gray-500 dark:text-gray-400">{label}</p>
+      <p className="mt-1 font-mono text-2xl font-semibold text-gray-900 dark:text-white">{value}</p>
       {sub && (
         <p className="mt-1 flex items-center gap-1 text-xs text-status-live">
           <TrendingUp size={12} /> {sub}
@@ -510,9 +510,9 @@ function HeroStat({ label, value, sub }) {
 
 function Tile({ label, value, accent }) {
   return (
-    <div className={cn('rounded-xl border border-line bg-canvas p-5 text-center', accent && 'border-primary/30')}>
-      <p className="font-mono text-2xl font-semibold text-white">{value}</p>
-      <p className="mt-1 text-xs text-gray-400">{label}</p>
+    <div className={cn('rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-5 text-center', accent && 'border-primary/30')}>
+      <p className="font-mono text-2xl font-semibold text-gray-900 dark:text-white">{value}</p>
+      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{label}</p>
     </div>
   );
 }
@@ -520,8 +520,8 @@ function Tile({ label, value, accent }) {
 function Row({ label, value, valueClass, mono, last }) {
   return (
     <div className={cn('flex items-center justify-between py-3', !last && 'border-b border-line')}>
-      <span className="text-sm text-gray-300">{label}</span>
-      <span className={cn('text-sm font-semibold', mono && 'font-mono', valueClass || 'text-white')}>{value}</span>
+      <span className="text-sm text-gray-600 dark:text-gray-300">{label}</span>
+      <span className={cn('text-sm font-semibold', mono && 'font-mono', valueClass || 'text-gray-900 dark:text-white')}>{value}</span>
     </div>
   );
 }
@@ -529,7 +529,7 @@ function Row({ label, value, valueClass, mono, last }) {
 function Chart() {
   const bars = [62, 70, 66, 75, 80, 77, 85, 90, 84, 92, 96, 88, 94, 98, 93, 100, 95, 91, 97, 100, 96, 93, 99, 100, 95, 98, 100, 98, 96, 100];
   return (
-    <div className="rounded-xl border border-line bg-canvas p-5">
+    <div className="rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas p-5">
       <div className="flex h-40 items-end gap-1">
         {bars.map((h, i) => (
           <motion.div

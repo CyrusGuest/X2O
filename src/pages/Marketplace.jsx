@@ -71,11 +71,11 @@ export default function Marketplace() {
       <div className="relative overflow-hidden border-b border-line">
         <div className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
         <div className="relative mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-gray-400">Marketplace</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tightest text-white sm:text-5xl">
+          <p className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">Marketplace</p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-5xl">
             Infrastructure marketplace
           </h1>
-          <p className="mt-3 max-w-2xl text-lg text-gray-300">
+          <p className="mt-3 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
             Discover, compare and track verified infrastructure projects across America.
           </p>
           <div className="mt-6 flex flex-wrap gap-8">
@@ -93,25 +93,25 @@ export default function Marketplace() {
             <div className="lg:sticky lg:top-24 space-y-4">
               {/* Search */}
               <div className="relative">
-                <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search projects, cities, states…"
-                  className="w-full rounded-lg border border-line bg-surface py-2.5 pl-9 pr-3 text-sm text-white placeholder:text-gray-500 focus:outline-none focus-visible:border-gray-600 focus-visible:ring-2 focus-visible:ring-white/20"
+                  className="w-full rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-surface py-2.5 pl-9 pr-3 text-sm text-gray-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus-visible:border-gray-600 focus-visible:ring-2 focus-visible:ring-white/20"
                 />
               </div>
 
               <div className="card p-5">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <SlidersHorizontal size={15} className="text-gray-400" />
+                  <h3 className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                    <SlidersHorizontal size={15} className="text-gray-500 dark:text-gray-400" />
                     Filters
                   </h3>
                   {activeFilters > 0 && (
                     <button
                       onClick={resetFilters}
-                      className="flex items-center gap-1 text-xs text-gray-400 hover:text-white"
+                      className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-white"
                     >
                       <X size={12} /> Clear ({activeFilters})
                     </button>
@@ -129,11 +129,11 @@ export default function Marketplace() {
                         className={cn(
                           'flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-colors',
                           category === c.key
-                            ? 'bg-surface-hover text-white'
-                            : 'text-gray-300 hover:bg-surface hover:text-white'
+                            ? 'bg-white dark:bg-surface-hover text-gray-900 dark:text-white'
+                            : 'text-gray-600 dark:text-gray-300 hover:bg-white dark:bg-surface hover:text-gray-900 dark:text-white'
                         )}
                       >
-                        <CategoryIcon category={c.key} size={15} className="text-gray-400" />
+                        <CategoryIcon category={c.key} size={15} className="text-gray-500 dark:text-gray-400" />
                         {c.label}
                       </button>
                     ))}
@@ -168,14 +168,14 @@ export default function Marketplace() {
           {/* Results */}
           <div className="col-span-12 lg:col-span-9">
             <div className="mb-6 flex items-center justify-between">
-              <p className="flex items-center gap-2 text-sm text-gray-300">
-                <LayoutGrid size={15} className="text-gray-400" />
-                <span className="font-mono font-medium text-white">{filtered.length}</span> projects
+              <p className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                <LayoutGrid size={15} className="text-gray-500 dark:text-gray-400" />
+                <span className="font-mono font-medium text-gray-900 dark:text-white">{filtered.length}</span> projects
               </p>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="rounded-lg border border-line bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                className="rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
               >
                 <option value="funding">Sort by funding</option>
                 <option value="power">Sort by power</option>
@@ -203,7 +203,7 @@ export default function Marketplace() {
             {filtered.length === 0 && (
               <div className="py-20 text-center">
                 <Search size={40} className="mx-auto mb-4 text-gray-600" />
-                <p className="text-gray-400">No projects match your filters.</p>
+                <p className="text-gray-500 dark:text-gray-400">No projects match your filters.</p>
                 <Button variant="secondary" className="mt-4" onClick={resetFilters}>
                   Clear filters
                 </Button>
@@ -219,8 +219,8 @@ export default function Marketplace() {
 function HeaderStat({ label, value }) {
   return (
     <div>
-      <p className="font-mono text-2xl font-semibold text-white">{value}</p>
-      <p className="text-xs text-gray-400">{label}</p>
+      <p className="font-mono text-2xl font-semibold text-gray-900 dark:text-white">{value}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400">{label}</p>
     </div>
   );
 }
@@ -228,7 +228,7 @@ function HeaderStat({ label, value }) {
 function FilterGroup({ label, children, last }) {
   return (
     <div className={cn('py-4', !last && 'border-b border-line')}>
-      <p className="mb-2.5 text-xs font-medium uppercase tracking-wide text-gray-400">{label}</p>
+      <p className="mb-2.5 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">{label}</p>
       {children}
     </div>
   );
@@ -240,10 +240,10 @@ function CatRow({ active, onClick, label }) {
       onClick={onClick}
       className={cn(
         'flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm transition-colors',
-        active ? 'bg-surface-hover text-white' : 'text-gray-300 hover:bg-surface hover:text-white'
+        active ? 'bg-white dark:bg-surface-hover text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-white dark:bg-surface hover:text-gray-900 dark:text-white'
       )}
     >
-      <LayoutGrid size={15} className="text-gray-400" />
+      <LayoutGrid size={15} className="text-gray-500 dark:text-gray-400" />
       {label}
     </button>
   );
@@ -256,8 +256,8 @@ function Pill({ active, onClick, children }) {
       className={cn(
         'rounded-full border px-3 py-1.5 text-xs font-medium transition-colors',
         active
-          ? 'border-gray-500 bg-surface-hover text-white'
-          : 'border-line text-gray-300 hover:border-gray-600 hover:text-white'
+          ? 'border-gray-500 bg-white dark:bg-surface-hover text-gray-900 dark:text-white'
+          : 'border-line text-gray-600 dark:text-gray-300 hover:border-gray-600 hover:text-gray-900 dark:text-white'
       )}
     >
       {children}
@@ -270,7 +270,7 @@ function Select({ value, onChange, options, allLabel }) {
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+      className="w-full rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
     >
       <option value="all">{allLabel}</option>
       {options.map((o) => (

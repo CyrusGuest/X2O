@@ -86,16 +86,16 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* ══ Hero ══════════════════════════════════════════ */}
-      <section className="relative border-b border-line">
-        <div className="pointer-events-none absolute inset-0 starfield opacity-70" />
-        <div className="pointer-events-none absolute inset-0 bg-grid" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.14),transparent_65%)]" />
+      <section className="relative border-b border-gray-200 bg-white dark:border-line dark:bg-canvas">
+        <div className="pointer-events-none absolute inset-0 starfield opacity-0 dark:opacity-70" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-0 dark:opacity-100" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.06),transparent_65%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.14),transparent_65%)]" />
 
         <div className="relative mx-auto grid max-w-[1400px] items-center gap-8 px-4 py-16 sm:gap-10 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
           <motion.div initial="hidden" animate="visible" variants={containerVariants}>
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-2.5 py-1 text-[11px] sm:px-3 sm:text-[13px] text-gray-200"
+              className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white px-2.5 py-1 text-[11px] sm:px-3 sm:text-[13px] text-gray-700 dark:border-line dark:bg-surface dark:text-gray-200"
             >
               <span className="flex h-1.5 w-1.5 rounded-full bg-yellow-500" />
               Coming Soon: The infrastructure operating system for the AI era
@@ -103,14 +103,14 @@ export default function Home() {
 
             <motion.h1
               variants={itemVariants}
-              className="mt-4 sm:mt-6 text-balance text-[2.5rem] font-semibold leading-[1.1] tracking-tightest text-white sm:text-5xl md:text-6xl lg:text-[80px]"
+              className="mt-4 sm:mt-6 text-balance text-[2.5rem] font-semibold leading-[1.1] tracking-tightest text-gray-900 dark:text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-[80px]"
             >
               Building America's <span className="text-gradient-accent">AI Future</span>.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="mt-4 sm:mt-6 max-w-xl text-balance text-base sm:text-lg leading-relaxed text-gray-200"
+              className="mt-4 sm:mt-6 max-w-xl text-balance text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-700 dark:text-gray-200"
             >
               The world's largest tokenized marketplace helping accelerate AI
               infrastructure — from data centers and power generation to cooling,
@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* ══ Preview dashboard ════════════════════════════════ */}
-      <section className="relative border-b border-line bg-surface/30 overflow-hidden">
+      <section className="relative border-b border-line bg-white dark:bg-surface/30 overflow-hidden">
         {/* Animated background gradient for visual interest */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary-light/20 blur-3xl animate-pulse" />
@@ -167,14 +167,14 @@ export default function Home() {
                   <span className="relative flex h-2 w-2 rounded-full bg-yellow-500" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-medium text-white">Preview: Network Dashboard</h3>
-                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400">
+                  <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-gray-900 dark:text-white">Preview: Network Dashboard</h3>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
                     Coming soon - Sample data preview
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-2 text-[10px] text-gray-500">
-                <span className="px-2 py-0.5 rounded-full bg-surface/50 border border-line">
+                <span className="px-2 py-0.5 rounded-full bg-white dark:bg-surface/50 border border-gray-300 dark:border-line">
                   Last updated: 2 min ago
                 </span>
               </div>
@@ -192,10 +192,10 @@ export default function Home() {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative bg-canvas/80 backdrop-blur-sm border border-line rounded-xl p-4">
+                <div className="relative bg-white dark:bg-canvas/80 backdrop-blur-sm border border-gray-300 dark:border-line rounded-xl p-4">
                   {/* Icon based on metric type */}
                   <div className="flex items-start justify-between mb-2">
-                    <div className="h-8 w-8 rounded-lg bg-surface/80 flex items-center justify-center">
+                    <div className="h-8 w-8 rounded-lg bg-white dark:bg-surface/80 flex items-center justify-center">
                       {m.prefix === '$' ? (
                         <span className="text-primary-light text-sm font-bold">$</span>
                       ) : m.suffix.includes('GW') ? (
@@ -203,7 +203,7 @@ export default function Home() {
                       ) : m.label.includes('Project') ? (
                         <Layers size={14} className="text-blue-400" />
                       ) : (
-                        <Server size={14} className="text-gray-400" />
+                        <Server size={14} className="text-yellow-400" />
                       )}
                     </div>
                     {/* Trend indicator */}
@@ -217,9 +217,9 @@ export default function Home() {
                     prefix={m.prefix}
                     suffix={m.suffix}
                     decimals={m.decimals}
-                    className="font-mono text-2xl font-bold tracking-tight text-white"
+                    className="font-mono text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                   />
-                  <p className="mt-1 text-[11px] text-gray-400 line-clamp-1">{m.label}</p>
+                  <p className="mt-1 text-[11px] text-gray-500 dark:text-gray-400 line-clamp-1">{m.label}</p>
                 </div>
               </motion.div>
             ))}
@@ -227,7 +227,7 @@ export default function Home() {
 
           {/* Show more metrics expandable on mobile */}
           <details className="md:hidden mt-3">
-            <summary className="flex items-center justify-center gap-2 py-2 text-xs text-gray-400 cursor-pointer hover:text-white transition-colors">
+            <summary className="flex items-center justify-center gap-2 py-2 text-xs text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:text-white transition-colors">
               <span>View all metrics</span>
               <ChevronDown size={14} />
             </summary>
@@ -238,30 +238,30 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-canvas/80 backdrop-blur-sm border border-line rounded-xl p-4"
+                  className="bg-white dark:bg-canvas/80 backdrop-blur-sm border border-gray-300 dark:border-line rounded-xl p-4"
                 >
                   <AnimatedCounter
                     value={m.value}
                     prefix={m.prefix}
                     suffix={m.suffix}
                     decimals={m.decimals}
-                    className="font-mono text-xl font-semibold tracking-tight text-white"
+                    className="font-mono text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
                   />
-                  <p className="mt-1 text-[11px] text-gray-400">{m.label}</p>
+                  <p className="mt-1 text-[11px] text-gray-500 dark:text-gray-400">{m.label}</p>
                 </motion.div>
               ))}
             </div>
           </details>
 
           {/* Desktop grid - enhanced */}
-          <div className="hidden md:grid grid-cols-4 gap-px overflow-hidden rounded-xl border border-line bg-line">
+          <div className="hidden md:grid grid-cols-4 gap-px overflow-hidden rounded-xl border border-gray-300 dark:border-line bg-line">
             {dashboardMetrics.map((m, index) => (
               <motion.div
                 key={m.label}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
-                className="relative bg-canvas px-5 py-6 group hover:bg-surface/50 transition-colors"
+                className="relative bg-white dark:bg-canvas px-5 py-6 group hover:bg-white dark:bg-surface/50 transition-colors"
               >
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] text-status-live flex items-center gap-0.5">
@@ -274,19 +274,19 @@ export default function Home() {
                   prefix={m.prefix}
                   suffix={m.suffix}
                   decimals={m.decimals}
-                  className="font-mono text-3xl font-semibold tracking-tight text-white"
+                  className="font-mono text-3xl font-semibold tracking-tight text-gray-900 dark:text-white"
                 />
-                <p className="mt-2 text-[13px] text-gray-300">{m.label}</p>
+                <p className="mt-2 text-[13px] text-gray-600 dark:text-gray-300">{m.label}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Mobile-only interactive footer */}
-          <div className="md:hidden mt-6 p-3 bg-surface/30 rounded-lg border border-line/50">
+          <div className="md:hidden mt-6 p-3 bg-white dark:bg-surface/30 rounded-lg border border-gray-300 dark:border-line/50">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-yellow-500 animate-pulse" />
-                <span className="text-[10px] text-gray-400">Network launching soon</span>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400">Network launching soon</span>
               </div>
               <Link to="/map">
                 <button className="text-[10px] text-primary-light hover:text-primary flex items-center gap-1">
@@ -300,14 +300,14 @@ export default function Home() {
       </section>
 
       {/* ══ Problem ═══════════════════════════════════════ */}
-      <section id="problem" className="relative border-b border-line">
+      <section id="problem" className="relative border-b border-gray-200 dark:border-line">
         <div className="mx-auto max-w-[1400px] px-4 py-16 sm:py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-400">The bottleneck</p>
-            <h2 className="mt-3 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">The bottleneck</p>
+            <h2 className="mt-3 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               The AI race has a physical bottleneck.
             </h2>
-            <p className="mt-4 sm:mt-5 text-balance text-base sm:text-lg leading-relaxed text-gray-300">
+            <p className="mt-4 sm:mt-5 text-balance text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               AI doesn't run on ideas — it runs on infrastructure. The next generation of AI
               requires massive investment into physical assets, yet projects still rely on
               spreadsheets, email, PDFs, phone calls, disconnected databases and legacy finance.
@@ -318,14 +318,14 @@ export default function Home() {
           <div className="mt-10 sm:mt-16 grid items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_auto_1fr]">
             {/* Fragmented */}
             <div className="card p-4 sm:p-6">
-              <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-gray-400">
+              <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">
                 Today · fragmented
               </p>
               <div className="space-y-2">
                 {fragmentedChain.map((node) => (
                   <div
                     key={node}
-                    className="flex items-center justify-between rounded-lg border border-dashed border-line bg-canvas px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-center justify-between rounded-lg border border-dashed border-line bg-white dark:bg-canvas px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm text-gray-600 dark:text-gray-300"
                   >
                     {node}
                     <span className="h-1.5 w-1.5 rounded-full bg-gray-700" />
@@ -336,7 +336,7 @@ export default function Home() {
 
             {/* Arrow */}
             <div className="flex justify-center">
-              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-line bg-surface text-primary-light lg:rotate-0">
+              <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-gray-300 dark:border-line bg-white dark:bg-surface text-primary-light lg:rotate-0">
                 <ArrowRight size={18} className="hidden lg:block" />
                 <ArrowDown size={18} className="lg:hidden" />
               </div>
@@ -348,15 +348,15 @@ export default function Home() {
               <p className="relative mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-widest text-primary-light">
                 With XSolut · unified
               </p>
-              <div className="relative flex h-[calc(100%-2.5rem)] flex-col items-center justify-center rounded-lg border border-line bg-canvas/60 px-4 py-8 sm:px-6 sm:py-12 text-center">
-                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl border border-line bg-surface">
-                  <Layers size={22} className="text-white sm:hidden" />
-                  <Layers size={26} className="hidden text-white sm:block" />
+              <div className="relative flex h-[calc(100%-2.5rem)] flex-col items-center justify-center rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-canvas/60 px-4 py-8 sm:px-6 sm:py-12 text-center">
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-surface">
+                  <Layers size={22} className="text-gray-900 dark:text-white sm:hidden" />
+                  <Layers size={26} className="hidden text-gray-900 dark:text-white sm:block" />
                 </div>
-                <p className="mt-3 sm:mt-4 text-base sm:text-lg font-semibold tracking-tight text-white">
+                <p className="mt-3 sm:mt-4 text-base sm:text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
                   One operating layer
                 </p>
-                <p className="mt-2 text-sm text-gray-300">
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                   Capital, builders, utilities, suppliers and government — verified,
                   discovered, funded and tracked in one system of record.
                 </p>
@@ -371,13 +371,13 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-4 py-16 sm:py-24 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-400">
+              <p className="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">
                 The marketplace
               </p>
-              <h2 className="mt-3 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+              <h2 className="mt-3 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
                 Every project, verified and discoverable.
               </h2>
-              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-300">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300">
                 Browse real infrastructure the way you'd browse real estate — location, power,
                 funding, timeline and risk, all in one place.
               </p>
@@ -423,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* ══ Categories ════════════════════════════════════ */}
-      <section id="categories" className="relative border-b border-line bg-gradient-to-b from-canvas to-surface/30 overflow-hidden">
+      <section id="categories" className="relative border-b border-gray-200 bg-white overflow-hidden dark:border-line dark:bg-gradient-to-b dark:from-canvas dark:to-surface/30">
         {/* Subtle animated background - mobile optimized */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid opacity-10" />
@@ -434,11 +434,11 @@ export default function Home() {
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-3">
               <div className="h-1 w-12 bg-gradient-to-r from-primary to-primary-light rounded-full" />
-              <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.15em] text-gray-400">
+              <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.15em] text-gray-500 dark:text-gray-400">
                 Coverage
               </p>
             </div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
               Every layer of{' '}
               <span className="relative">
                 <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-light/20 blur-2xl" />
@@ -447,7 +447,7 @@ export default function Home() {
                 </span>
               </span>
             </h2>
-            <p className="mt-2 text-sm text-gray-400">
+            <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
               14 categories · 5,184+ suppliers · 50 states
             </p>
           </div>
@@ -468,23 +468,23 @@ export default function Home() {
                     to={`/marketplace?category=${c.key}`}
                     className="group relative block h-full"
                   >
-                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface/80 to-canvas/80 backdrop-blur-sm border border-line/50 p-4 hover:border-primary/30 active:scale-[0.98] transition-all">
+                    <div className="relative overflow-hidden rounded-xl bg-white dark:bg-gradient-to-br dark:from-surface/80 dark:to-canvas/80 backdrop-blur-sm border border-gray-300 dark:border-line/50 p-4 hover:border-primary/30 active:scale-[0.98] transition-all">
                       {/* Glow effect */}
                       <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 bg-primary/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
                       {/* Content */}
                       <div className="relative">
                         {/* Icon */}
-                        <div className="h-10 w-10 rounded-xl bg-canvas/60 border border-line/50 flex items-center justify-center mb-3 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all">
+                        <div className="h-10 w-10 rounded-xl bg-white dark:bg-canvas/60 border border-gray-300 dark:border-line/50 flex items-center justify-center mb-3 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all">
                           <CategoryIcon
                             category={c.key}
                             size={18}
-                            className="text-gray-300 group-hover:text-primary-light transition-colors"
+                            className="text-gray-600 dark:text-gray-300 group-hover:text-primary-light transition-colors"
                           />
                         </div>
 
                         {/* Text */}
-                        <h3 className="text-sm font-semibold text-white group-hover:text-primary-light transition-colors line-clamp-1">
+                        <h3 className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-primary-light transition-colors line-clamp-1">
                           {c.label}
                         </h3>
                         <p className="text-[11px] text-gray-500 mt-0.5">
@@ -509,9 +509,9 @@ export default function Home() {
 
             {/* More categories in compact list */}
             <details className="group">
-              <summary className="flex items-center justify-between p-3 bg-surface/50 rounded-xl border border-line/50 cursor-pointer hover:bg-surface/80 transition-colors">
-                <span className="text-sm font-medium text-white">View all categories</span>
-                <ChevronDown size={16} className="text-gray-400 group-open:rotate-180 transition-transform" />
+              <summary className="flex items-center justify-between p-3 bg-white dark:bg-surface/50 rounded-xl border border-gray-300 dark:border-line/50 cursor-pointer hover:bg-white dark:bg-surface/80 transition-colors">
+                <span className="text-sm font-medium text-gray-900 dark:text-white">View all categories</span>
+                <ChevronDown size={16} className="text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform" />
               </summary>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -519,10 +519,10 @@ export default function Home() {
                   <Link
                     key={c.key}
                     to={`/marketplace?category=${c.key}`}
-                    className="flex items-center gap-2 p-2.5 bg-canvas/50 rounded-lg border border-line/30 hover:bg-surface/50 hover:border-primary/30 transition-all"
+                    className="flex items-center gap-2 p-2.5 bg-white dark:bg-canvas/50 rounded-lg border border-gray-300 dark:border-line/30 hover:bg-white dark:bg-surface/50 hover:border-primary/30 transition-all"
                   >
-                    <CategoryIcon category={c.key} size={14} className="text-gray-400" />
-                    <span className="text-xs text-gray-300 line-clamp-1">{c.label}</span>
+                    <CategoryIcon category={c.key} size={14} className="text-gray-500 dark:text-gray-400" />
+                    <span className="text-xs text-gray-600 dark:text-gray-300 line-clamp-1">{c.label}</span>
                   </Link>
                 ))}
               </div>
@@ -530,16 +530,16 @@ export default function Home() {
 
             {/* Quick stats for mobile */}
             <div className="mt-6 grid grid-cols-3 gap-2">
-              <div className="text-center p-3 bg-surface/30 rounded-lg border border-line/30">
-                <p className="text-lg font-bold text-white">1.3K</p>
+              <div className="text-center p-3 bg-white dark:bg-surface/30 rounded-lg border border-gray-300 dark:border-line/30">
+                <p className="text-lg font-bold text-gray-900 dark:text-white">1.3K</p>
                 <p className="text-[10px] text-gray-500">Projects</p>
               </div>
-              <div className="text-center p-3 bg-surface/30 rounded-lg border border-line/30">
-                <p className="text-lg font-bold text-white">38GW</p>
+              <div className="text-center p-3 bg-white dark:bg-surface/30 rounded-lg border border-gray-300 dark:border-line/30">
+                <p className="text-lg font-bold text-gray-900 dark:text-white">38GW</p>
                 <p className="text-[10px] text-gray-500">Power</p>
               </div>
-              <div className="text-center p-3 bg-surface/30 rounded-lg border border-line/30">
-                <p className="text-lg font-bold text-white">$842B</p>
+              <div className="text-center p-3 bg-white dark:bg-surface/30 rounded-lg border border-gray-300 dark:border-line/30">
+                <p className="text-lg font-bold text-gray-900 dark:text-white">$842B</p>
                 <p className="text-[10px] text-gray-500">Value</p>
               </div>
             </div>
@@ -564,20 +564,20 @@ export default function Home() {
                   <div className="relative h-full card glow-border card-hover flex items-start gap-3 p-4 hover:border-primary/30 transition-all duration-300">
                     <div className="relative flex-shrink-0">
                       <div className="absolute inset-0 bg-primary/30 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-canvas to-surface border border-line group-hover:border-primary/30 transition-all duration-300">
+                      <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-white dark:bg-gradient-to-br dark:from-canvas dark:to-surface border border-gray-300 dark:border-line group-hover:border-primary/30 transition-all duration-300">
                         <CategoryIcon
                           category={c.key}
                           size={18}
-                          className="text-gray-300 group-hover:text-primary-light transition-colors duration-300"
+                          className="text-gray-600 dark:text-gray-300 group-hover:text-primary-light transition-colors duration-300"
                         />
                       </span>
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-white group-hover:text-primary-light transition-colors line-clamp-1">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-light transition-colors line-clamp-1">
                         {c.label}
                       </p>
-                      <p className="mt-0.5 text-[11px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                      <p className="mt-0.5 text-[11px] text-gray-500 group-hover:text-gray-500 dark:text-gray-400 transition-colors">
                         {Math.floor(Math.random() * 300 + 50)} active projects
                       </p>
                     </div>
@@ -595,7 +595,7 @@ export default function Home() {
       </section>
 
       {/* ══ Tokenization ══════════════════════════════════ */}
-      <section className="relative border-b border-line bg-gradient-to-b from-surface/20 via-canvas to-surface/30 overflow-hidden">
+      <section className="relative border-b border-gray-200 bg-white overflow-hidden dark:border-line dark:bg-gradient-to-b dark:from-surface/20 dark:via-canvas dark:to-surface/30">
         {/* Animated token visualization background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid opacity-5" />
@@ -631,7 +631,7 @@ export default function Home() {
                 <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/20 to-primary-light/20 backdrop-blur-sm border border-primary/30 flex items-center justify-center">
                   <div className="text-center">
                     <Fingerprint size={32} className="text-primary-light mx-auto mb-2" />
-                    <p className="text-[10px] font-bold text-white uppercase tracking-wider">Token</p>
+                    <p className="text-[10px] font-bold text-gray-900 dark:text-white uppercase tracking-wider">Token</p>
                   </div>
                 </div>
 
@@ -655,7 +655,7 @@ export default function Home() {
                 </p>
                 <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary" />
               </div>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-2xl">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white max-w-2xl">
                 Secure digital{' '}
                 <span className="relative inline-block">
                   <span className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary-light/30 blur-xl" />
@@ -685,17 +685,17 @@ export default function Home() {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent rounded-xl transition-all duration-300" />
 
-                      <div className="relative overflow-hidden rounded-xl bg-surface/60 backdrop-blur-sm border border-line/50 p-4 hover:border-primary/30 transition-all">
+                      <div className="relative overflow-hidden rounded-xl bg-white dark:bg-surface/60 backdrop-blur-sm border border-gray-300 dark:border-line/50 p-4 hover:border-primary/30 transition-all">
                         {/* Icon with glow */}
                         <div className="relative mb-3">
                           <div className="absolute inset-0 bg-primary/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                          <div className="relative h-10 w-10 rounded-lg bg-gradient-to-br from-canvas to-surface border border-line/50 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                          <div className="relative h-10 w-10 rounded-lg bg-white dark:bg-gradient-to-br dark:from-canvas dark:to-surface border border-gray-300 dark:border-line/50 flex items-center justify-center group-hover:border-primary/30 transition-colors">
                             <Icon size={18} className="text-primary-light" />
                           </div>
                         </div>
 
                         {/* Text */}
-                        <p className="text-xs sm:text-sm font-medium text-gray-200 line-clamp-2">
+                        <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 line-clamp-2">
                           {b.text}
                         </p>
 
@@ -727,10 +727,10 @@ export default function Home() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 + index * 0.1 }}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-canvas/40 border border-line/30 hover:bg-surface/50 hover:border-primary/30 transition-all"
+                      className="flex items-center gap-3 p-3 rounded-lg bg-white dark:bg-canvas/40 border border-gray-300 dark:border-line/30 hover:bg-white dark:bg-surface/50 hover:border-primary/30 transition-all"
                     >
                       <Icon size={14} className="text-primary-light flex-shrink-0" />
-                      <span className="text-xs text-gray-300">{b.text}</span>
+                      <span className="text-xs text-gray-600 dark:text-gray-300">{b.text}</span>
                     </motion.div>
                   );
                 })}
@@ -755,7 +755,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              <p className="text-sm sm:text-base leading-relaxed text-gray-300 mb-4">
+              <p className="text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-300 mb-4">
                 Tokenization creates a secure digital record of real-world infrastructure,
                 enabling transparent tracking, compliant participation, and streamlined asset management.
               </p>
@@ -777,12 +777,12 @@ export default function Home() {
               </div>
 
               {/* Compliance note with better visual treatment */}
-              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface/80 to-canvas/60 backdrop-blur-sm border border-line/50 p-4">
+              <div className="relative overflow-hidden rounded-xl bg-white dark:bg-gradient-to-br dark:from-surface/80 dark:to-canvas/60 backdrop-blur-sm border border-gray-300 dark:border-line/50 p-4">
                 <div className="absolute top-0 right-0 h-20 w-20 bg-primary/5 rounded-full blur-2xl" />
                 <div className="relative flex gap-3">
                   <Shield size={16} className="text-gray-500 flex-shrink-0 mt-0.5" />
-                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                    <span className="font-semibold text-gray-300">Compliance First:</span> Any investment functionality requires appropriate legal
+                  <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    <span className="font-semibold text-gray-600 dark:text-gray-300">Compliance First:</span> Any investment functionality requires appropriate legal
                     and regulatory compliance. XSolut is infrastructure software, not a speculative token.
                   </p>
                 </div>
@@ -793,7 +793,7 @@ export default function Home() {
       </section>
 
       {/* ══ Intelligence layer ════════════════════════════ */}
-      <section id="intelligence" className="relative border-b border-line bg-gradient-to-b from-canvas via-surface/40 to-canvas overflow-hidden">
+      <section id="intelligence" className="relative border-b border-gray-200 bg-white overflow-hidden dark:border-line dark:bg-gradient-to-b dark:from-canvas dark:via-surface/40 dark:to-canvas">
         {/* Neural network visualization background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid opacity-10" />
@@ -844,7 +844,7 @@ export default function Home() {
               >
                 {/* Central intelligence core */}
                 <div className="absolute inset-12 rounded-full bg-gradient-to-br from-primary/30 to-primary-light/30 blur-xl animate-pulse" />
-                <div className="absolute inset-16 rounded-full bg-canvas border-2 border-primary/30 flex items-center justify-center">
+                <div className="absolute inset-16 rounded-full bg-white dark:bg-canvas border-2 border-primary/30 flex items-center justify-center">
                   <Database size={28} className="text-primary-light" />
                 </div>
 
@@ -924,7 +924,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
                 The marketplace creates{' '}
                 <span className="relative">
                   <span className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary-light/30 blur-2xl animate-pulse" />
@@ -934,7 +934,7 @@ export default function Home() {
                 </span>
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base text-gray-400 max-w-xl mx-auto">
+              <p className="mt-4 text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
                 Every project generates operational data. Together, they form the world's largest infrastructure intelligence network.
               </p>
             </motion.div>
@@ -954,10 +954,10 @@ export default function Home() {
                   className="relative group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-lg opacity-0 group-active:opacity-100 transition-opacity" />
-                  <div className="relative bg-surface/60 backdrop-blur-sm border border-line/50 rounded-lg p-3 hover:border-primary/30 transition-all">
+                  <div className="relative bg-white dark:bg-surface/60 backdrop-blur-sm border border-gray-300 dark:border-line/50 rounded-lg p-3 hover:border-primary/30 transition-all">
                     <div className="flex items-start gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary-light mt-1.5 animate-pulse" />
-                      <span className="text-xs text-gray-300 font-medium">{signal}</span>
+                      <span className="text-xs text-gray-600 dark:text-gray-300 font-medium">{signal}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -974,7 +974,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-canvas/80 border border-line/50 text-xs text-gray-400 whitespace-nowrap"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white dark:bg-canvas/80 border border-gray-300 dark:border-line/50 text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap"
                   >
                     <span className="h-1 w-1 rounded-full bg-primary/60" />
                     {signal}
@@ -985,7 +985,7 @@ export default function Home() {
 
             {/* Live data counter */}
             <div className="mt-6 text-center">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface/50 border border-line/50">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white dark:bg-surface/50 border border-gray-300 dark:border-line/50">
                 <div className="flex items-center gap-1">
                   <span className="h-2 w-2 rounded-full bg-yellow-500 animate-pulse" />
                   <span className="text-[10px] uppercase tracking-wider text-gray-500">Preview</span>
@@ -993,7 +993,7 @@ export default function Home() {
                 <div className="h-4 w-px bg-line" />
                 <div className="flex items-baseline gap-1">
                   <motion.span
-                    className="text-lg font-bold text-white font-mono"
+                    className="text-lg font-bold text-gray-900 dark:text-white font-mono"
                     animate={{ opacity: [1, 0.7, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -1019,7 +1019,7 @@ export default function Home() {
                   className="group relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-canvas border border-line/50 text-sm text-gray-200 hover:border-primary/30 hover:text-white transition-all cursor-default">
+                  <span className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-canvas border border-gray-300 dark:border-line/50 text-sm text-gray-700 dark:text-gray-200 hover:border-primary/30 hover:text-gray-900 dark:text-white transition-all cursor-default">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary-light/60 group-hover:bg-primary-light animate-pulse" />
                     {signal}
                   </span>
@@ -1034,20 +1034,20 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-6 px-6 py-3 rounded-2xl bg-surface/50 border border-line/50 backdrop-blur-sm"
+                  className="flex items-center gap-6 px-6 py-3 rounded-2xl bg-white dark:bg-surface/50 border border-gray-300 dark:border-line/50 backdrop-blur-sm"
                 >
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-white">19</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">19</p>
                     <p className="text-xs text-gray-500">Signals</p>
                   </div>
                   <div className="h-8 w-px bg-line" />
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-white">5.2M</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">5.2M</p>
                     <p className="text-xs text-gray-500">Data points</p>
                   </div>
                   <div className="h-8 w-px bg-line" />
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-white">24/7</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">24/7</p>
                     <p className="text-xs text-gray-500">Collection</p>
                   </div>
                 </motion.div>
@@ -1058,7 +1058,7 @@ export default function Home() {
       </section>
 
       {/* ══ AI layer ══════════════════════════════════════ */}
-      <section id="ai" className="relative border-b border-line bg-gradient-to-b from-canvas via-surface/20 to-canvas overflow-hidden">
+      <section id="ai" className="relative border-b border-gray-200 bg-white overflow-hidden dark:border-line dark:bg-gradient-to-b dark:from-canvas dark:via-surface/20 dark:to-canvas">
         {/* Animated background - neural network effect */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid opacity-10" />
@@ -1102,7 +1102,7 @@ export default function Home() {
               className="relative mx-auto max-w-[320px]"
             >
               {/* Network grid visualization */}
-              <div className="relative rounded-xl border border-primary/20 bg-surface/50 backdrop-blur-sm p-6">
+              <div className="relative rounded-xl border border-primary/20 bg-white dark:bg-surface/50 backdrop-blur-sm p-6">
                 {/* Processing bars */}
                 <div className="space-y-3">
                   {[
@@ -1118,7 +1118,7 @@ export default function Home() {
                       transition={{ delay: 0.1 + i * 0.1 }}
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] text-gray-400">{item.label}</span>
+                        <span className="text-[10px] text-gray-500 dark:text-gray-400">{item.label}</span>
                         <motion.span
                           className="text-[10px] font-mono text-primary-light"
                           initial={{ opacity: 0 }}
@@ -1128,7 +1128,7 @@ export default function Home() {
                           {item.progress}%
                         </motion.span>
                       </div>
-                      <div className="h-1 bg-surface rounded-full overflow-hidden">
+                      <div className="h-1 bg-white dark:bg-surface rounded-full overflow-hidden">
                         <motion.div
                           className="h-full bg-gradient-to-r from-primary to-primary-light"
                           initial={{ width: '0%' }}
@@ -1152,7 +1152,7 @@ export default function Home() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className="h-2 w-2 rounded-full bg-yellow-500 animate-pulse" />
-                      <span className="text-xs text-gray-300">AI Coming Soon</span>
+                      <span className="text-xs text-gray-600 dark:text-gray-300">AI Coming Soon</span>
                     </div>
                     <div className="flex items-center gap-1">
                       {[...Array(4)].map((_, i) => (
@@ -1207,13 +1207,13 @@ export default function Home() {
                 </motion.div>
                 The AI layer
               </div>
-              <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+              <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
                 As the dataset grows,{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
                   XSolut begins to predict
                 </span>
               </h2>
-              <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-300">
+              <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 This transforms XSolut from a marketplace into an infrastructure intelligence
                 platform — the system that knows where to build, what it costs, and when it
                 will be done.
@@ -1221,9 +1221,9 @@ export default function Home() {
 
               {/* Mobile: Live prediction counter */}
               <div className="sm:hidden mt-6">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface/50 border border-primary/20">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white dark:bg-surface/50 border border-primary/20">
                   <span className="h-2 w-2 rounded-full bg-primary-light animate-pulse" />
-                  <span className="text-sm text-gray-300">
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
                     <motion.span
                       className="font-bold text-primary-light font-mono"
                       animate={{ opacity: [1, 0.7, 1] }}
@@ -1256,7 +1256,7 @@ export default function Home() {
                     >
                       <Sparkles size={12} className="shrink-0 text-primary-light mt-0.5" />
                     </motion.div>
-                    <span className="text-[11px] sm:text-[13px] text-gray-200 leading-tight">
+                    <span className="text-[11px] sm:text-[13px] text-gray-700 dark:text-gray-200 leading-tight">
                       {p}
                     </span>
                   </div>
@@ -1270,7 +1270,7 @@ export default function Home() {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="bg-surface/60 backdrop-blur-sm border border-primary/20 rounded-lg px-3 py-2 text-xs text-primary-light"
+              className="bg-white dark:bg-surface/60 backdrop-blur-sm border border-primary/20 rounded-lg px-3 py-2 text-xs text-primary-light"
             >
               Analyzing patterns...
             </motion.div>
@@ -1279,7 +1279,7 @@ export default function Home() {
       </section>
 
       {/* ══ Flywheel ══════════════════════════════════════ */}
-      <section className="relative border-b border-line bg-surface/30 overflow-hidden">
+      <section className="relative border-b border-line bg-white dark:bg-surface/30 overflow-hidden">
         {/* Background gradient effect */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.08),transparent_70%)]" />
 
@@ -1303,10 +1303,10 @@ export default function Home() {
               </motion.div>
               The flywheel
             </div>
-            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">compounding</span> advantage.
             </h2>
-            <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-300">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               Projects attract the marketplace. The marketplace generates data. Data powers AI
               intelligence. Intelligence drives better decisions — which attracts even more
               projects. The loop compounds, forever.
@@ -1321,7 +1321,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-2 text-sm text-gray-400"
+                  className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
                 >
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/20 text-[10px] font-bold text-primary-light">
                     {i + 1}
@@ -1339,9 +1339,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-primary/20">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-surface/50 border border-primary/20">
                 <div className="h-2 w-2 rounded-full bg-primary-light animate-pulse" />
-                <span className="text-sm text-gray-300">
+                <span className="text-sm text-gray-600 dark:text-gray-300">
                   Compound growth rate: <span className="font-mono font-bold text-primary-light">∞</span>
                 </span>
               </div>
@@ -1384,13 +1384,13 @@ export default function Home() {
               </motion.span>
               Why this matters
             </div>
-            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               Eventually, <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">XSolut knows</span>.
             </h2>
 
             {/* Mobile: Intelligence indicator */}
             <div className="mt-6 sm:hidden">
-              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-surface/50 border border-primary/20">
+              <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white dark:bg-surface/50 border border-primary/20">
                 <div className="flex items-center gap-1">
                   {[...Array(3)].map((_, i) => (
                     <motion.div
@@ -1401,7 +1401,7 @@ export default function Home() {
                     />
                   ))}
                 </div>
-                <span className="text-xs text-gray-400">Learning continuously</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">Learning continuously</span>
               </div>
             </div>
           </motion.div>
@@ -1440,7 +1440,7 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  <p className="text-base sm:text-lg font-medium leading-snug text-white">
+                  <p className="text-base sm:text-lg font-medium leading-snug text-gray-900 dark:text-white">
                     {q}
                   </p>
                   {/* Data processing indicator */}
@@ -1468,7 +1468,7 @@ export default function Home() {
             animate={{ y: [-5, 5, -5] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            <div className="bg-surface/80 backdrop-blur-sm border border-primary/20 rounded-lg px-3 py-2 text-xs text-primary-light">
+            <div className="bg-white dark:bg-surface/80 backdrop-blur-sm border border-primary/20 rounded-lg px-3 py-2 text-xs text-primary-light">
               <span className="opacity-75">Insights from</span>
               <span className="font-mono font-bold ml-1">1M+</span>
               <span className="opacity-75"> data points</span>
@@ -1483,7 +1483,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               The system that knows the answers before you ask
             </p>
           </motion.div>
@@ -1491,7 +1491,7 @@ export default function Home() {
       </section>
 
       {/* ══ Long-term vision ══════════════════════════════ */}
-      <section className="relative border-b border-line bg-surface/30 overflow-hidden">
+      <section className="relative border-b border-line bg-white dark:bg-surface/30 overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.06),transparent_65%)]" />
 
@@ -1514,7 +1514,7 @@ export default function Home() {
               </motion.div>
               Trajectory
             </div>
-            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               From <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">AI infrastructure</span> to everything physical.
             </h2>
 
@@ -1558,8 +1558,8 @@ export default function Home() {
                       className="h-2 w-2 rounded-full bg-primary-light"
                     />
                   </div>
-                  <p className="text-lg sm:text-xl font-semibold text-white">AI Infrastructure</p>
-                  <div className="mt-3 h-1 w-full bg-surface rounded-full overflow-hidden">
+                  <p className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">AI Infrastructure</p>
+                  <div className="mt-3 h-1 w-full bg-white dark:bg-surface rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-primary to-primary-light"
                       initial={{ width: '0%' }}
@@ -1584,7 +1584,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-light/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative card p-6 sm:p-8 hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Tomorrow</p>
+                  <p className="text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">Tomorrow</p>
                   <div className="flex items-center gap-1">
                     {[...Array(3)].map((_, i) => (
                       <motion.div
@@ -1607,7 +1607,7 @@ export default function Home() {
                       className="flex items-center gap-2"
                     >
                       <div className="h-1 w-1 rounded-full bg-primary/40" />
-                      <p className="text-sm sm:text-base text-gray-200">{item}</p>
+                      <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200">{item}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -1625,7 +1625,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-light/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative card p-6 sm:p-8 hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-xs font-medium uppercase tracking-widest text-gray-400">Eventually</p>
+                  <p className="text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">Eventually</p>
                   <motion.div
                     animate={{ scale: [0.8, 1.2, 0.8] }}
                     transition={{ duration: 3, repeat: Infinity }}
@@ -1691,7 +1691,7 @@ export default function Home() {
               </motion.div>
               Business model
             </div>
-            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               Many ways to monetize a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">system of record</span>.
             </h2>
 
@@ -1703,7 +1703,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="inline-flex items-center gap-3 px-3 py-2 rounded-lg bg-surface/50 border border-primary/20">
+              <div className="inline-flex items-center gap-3 px-3 py-2 rounded-lg bg-white dark:bg-surface/50 border border-primary/20">
                 <div className="flex flex-col">
                   <span className="text-[10px] text-gray-500 uppercase">Revenue Streams</span>
                   <span className="text-sm font-mono text-primary-light font-bold">{businessModel.length}</span>
@@ -1740,7 +1740,7 @@ export default function Home() {
                   className="group relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-light/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative rounded-xl border border-line bg-surface/80 backdrop-blur-sm p-4 hover:border-primary/30 transition-all">
+                  <div className="relative rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-surface/80 backdrop-blur-sm p-4 hover:border-primary/30 transition-all">
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-[10px] font-mono text-primary-light opacity-60">
                         {String(i + 1).padStart(2, '0')}
@@ -1755,7 +1755,7 @@ export default function Home() {
                         }`} />
                       </div>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-200 group-hover:text-white transition-colors">
+                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-white transition-colors">
                       {b}
                     </p>
                     {/* Mobile: Revenue potential indicator */}
@@ -1806,7 +1806,7 @@ export default function Home() {
       </section>
 
       {/* ══ Acquisition / strategic fit ═══════════════════ */}
-      <section className="relative border-b border-line bg-surface/30 overflow-hidden">
+      <section className="relative border-b border-line bg-white dark:bg-surface/30 overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,114,245,0.04),transparent_60%)]" />
         <div className="absolute inset-0 bg-grid opacity-20" />
@@ -1832,10 +1832,10 @@ export default function Home() {
               </motion.div>
               Strategic fit
             </div>
-            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-white">
+            <h2 className="mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white">
               A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">coordination layer</span> many will want.
             </h2>
-            <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-300">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               Strategic interest could come from organizations that need infrastructure
               coordination or data — cloud providers, enterprise software companies,
               construction technology firms, infrastructure investors and government
@@ -1850,7 +1850,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-surface/50 border border-primary/20">
+              <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-white dark:bg-surface/50 border border-primary/20">
                 <span className="text-xs text-gray-500">Potential Strategic Partners</span>
                 <div className="flex items-center gap-1">
                   <motion.div
@@ -1913,7 +1913,7 @@ export default function Home() {
                   <div className="mb-3 flex justify-center">
                     <motion.div
                       whileHover={{ rotate: 10, scale: 1.1 }}
-                      className="flex h-12 w-12 items-center justify-center rounded-lg bg-surface/50 border border-primary/20"
+                      className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-surface/50 border border-primary/20"
                     >
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-primary-light">
                         <path d="M12 2L2 7V12C2 16.5 5.84 20.74 11 22C16.16 20.74 20 16.5 20 12V7L12 2Z"
@@ -1922,7 +1922,7 @@ export default function Home() {
                     </motion.div>
                   </div>
 
-                  <p className="text-xs sm:text-sm font-medium text-gray-200 group-hover:text-white transition-colors">
+                  <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-white transition-colors">
                     {org.name}
                   </p>
 
@@ -1934,7 +1934,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + i * 0.1 }}
                   >
-                    <div className="h-0.5 w-full bg-surface rounded-full overflow-hidden">
+                    <div className="h-0.5 w-full bg-white dark:bg-surface rounded-full overflow-hidden">
                       <motion.div
                         className="h-full bg-gradient-to-r from-primary to-primary-light"
                         initial={{ width: '0%' }}
@@ -1990,10 +1990,10 @@ export default function Home() {
       </section>
 
       {/* ══ Final CTA ═════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-canvas">
+      <section className="relative overflow-hidden bg-white dark:bg-canvas">
         {/* Enhanced background layers */}
-        <div className="pointer-events-none absolute inset-0 starfield opacity-40" />
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-30" />
+        <div className="pointer-events-none absolute inset-0 starfield opacity-0 dark:opacity-40" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-0 dark:opacity-30" />
         <motion.div
           className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] sm:h-[420px] sm:w-[600px] lg:w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           animate={{ scale: [1, 1.05, 1] }}
@@ -2047,7 +2047,7 @@ export default function Home() {
           </motion.div>
 
           <motion.h2
-            className="text-balance text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tightest text-white"
+            className="text-balance text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tightest text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -2061,7 +2061,7 @@ export default function Home() {
           </motion.h2>
 
           <motion.p
-            className="mx-auto mt-4 sm:mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-gray-300"
+            className="mx-auto mt-4 sm:mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -2125,16 +2125,16 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-primary/20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-surface/50 border border-primary/20">
               <div className="h-2 w-2 rounded-full bg-yellow-500 animate-pulse" />
-              <span className="text-sm text-gray-400">System launching soon • Get early access</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">System launching soon • Get early access</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ══ Disclaimer ═════════════════════════════════════ */}
-      <section className="relative border-t border-line bg-surface/20">
+      <section className="relative border-t border-line bg-white dark:bg-surface/20">
         <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-xs sm:text-sm text-gray-500">
@@ -2159,7 +2159,7 @@ function VisionCard({ tag, items, accent, big }) {
       {accent && (
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,114,245,0.14),transparent_60%)]" />
       )}
-      <p className="relative text-xs font-medium uppercase tracking-widest text-gray-400">{tag}</p>
+      <p className="relative text-xs font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">{tag}</p>
       <div className="relative mt-4 space-y-2">
         {items.map((it) => (
           <p
@@ -2167,7 +2167,7 @@ function VisionCard({ tag, items, accent, big }) {
             className={
               big
                 ? 'text-2xl font-semibold tracking-tight text-gradient-accent'
-                : 'text-lg font-medium text-white'
+                : 'text-lg font-medium text-gray-900 dark:text-white'
             }
           >
             {it}

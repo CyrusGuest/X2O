@@ -20,15 +20,15 @@ export default function Button({
   };
 
   const variants = {
-    // Vercel primary: white fill, black text
-    primary: 'bg-white text-black hover:bg-gray-200',
+    // Vercel primary: white fill in dark, black fill in light
+    primary: 'bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200',
     // Secondary: subtle bordered surface
-    secondary: 'bg-transparent text-gray-100 border border-line hover:bg-surface-hover hover:border-gray-600',
+    secondary: 'bg-transparent text-gray-700 border border-gray-300 hover:bg-white hover:border-gray-400 dark:text-gray-100 dark:border-line dark:hover:bg-surface-hover dark:hover:border-gray-600',
     // Outline == secondary alias for backwards compat
-    outline: 'bg-transparent text-gray-100 border border-line hover:bg-surface-hover hover:border-gray-600',
+    outline: 'bg-transparent text-gray-700 border border-gray-300 hover:bg-white hover:border-gray-400 dark:text-gray-100 dark:border-line dark:hover:bg-surface-hover dark:hover:border-gray-600',
     // Accent: Vercel blue
     accent: 'bg-primary text-white hover:bg-primary-dark',
-    ghost: 'bg-transparent text-gray-200 hover:bg-surface-hover hover:text-white',
+    ghost: 'bg-transparent text-gray-700 hover:bg-white hover:text-gray-900 dark:text-gray-200 dark:hover:bg-surface-hover dark:hover:text-white',
   };
 
   return (

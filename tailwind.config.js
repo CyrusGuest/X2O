@@ -22,16 +22,28 @@ export default {
           900: '#161616',
           950: '#0a0a0a',
         },
-        // Page + surface backgrounds
-        canvas: '#000000',
+        // Page + surface backgrounds (responsive to theme)
+        canvas: {
+          DEFAULT: '#000000',
+          light: '#ffffff',
+        },
         surface: {
           DEFAULT: '#0a0a0a',
           raised: '#111111',
           hover: '#1a1a1a',
+          light: {
+            DEFAULT: '#fafafa',
+            raised: '#f5f5f5',
+            hover: '#eeeeee',
+          }
         },
         line: {
           DEFAULT: '#2e2e2e',
           subtle: '#1f1f1f',
+          light: {
+            DEFAULT: '#e5e5e5',
+            subtle: '#f0f0f0',
+          }
         },
         // Accent — Vercel blue
         primary: {

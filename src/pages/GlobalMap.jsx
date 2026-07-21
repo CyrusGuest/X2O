@@ -56,13 +56,13 @@ export default function GlobalMap() {
         <div className="relative mx-auto max-w-[1400px] px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
+              <p className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">
                 Infrastructure Map
               </p>
-              <h1 className="mt-3 text-4xl font-semibold tracking-tightest text-white sm:text-5xl">
+              <h1 className="mt-3 text-4xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-5xl">
                 America's AI infrastructure
               </h1>
-              <p className="mt-3 max-w-xl text-lg text-gray-300">
+              <p className="mt-3 max-w-xl text-lg text-gray-600 dark:text-gray-300">
                 A live map of the projects rebuilding the country for the AI era.
               </p>
             </div>
@@ -80,8 +80,8 @@ export default function GlobalMap() {
           {/* Rail */}
           <div className="col-span-12 space-y-4 lg:col-span-3">
             <div className="card p-5">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
-                <SlidersHorizontal size={15} className="text-gray-400" />
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                <SlidersHorizontal size={15} className="text-gray-500 dark:text-gray-400" />
                 Phase
               </h3>
               <div className="space-y-1.5">
@@ -92,8 +92,8 @@ export default function GlobalMap() {
                     className={cn(
                       'flex w-full items-center justify-between rounded-lg border px-3 py-2.5 text-sm transition-colors',
                       phase === ph
-                        ? 'border-gray-600 bg-surface-hover text-white'
-                        : 'border-transparent text-gray-300 hover:bg-surface hover:text-white'
+                        ? 'border-gray-600 bg-white dark:bg-surface-hover text-gray-900 dark:text-white'
+                        : 'border-transparent text-gray-600 dark:text-gray-300 hover:bg-white dark:bg-surface hover:text-gray-900 dark:text-white'
                     )}
                   >
                     <span className="flex items-center gap-2.5">
@@ -103,15 +103,15 @@ export default function GlobalMap() {
                       />
                       {phaseLabel[ph]}
                     </span>
-                    <span className="font-mono text-xs text-gray-300">{phaseCounts[ph]}</span>
+                    <span className="font-mono text-xs text-gray-600 dark:text-gray-300">{phaseCounts[ph]}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             <div className="card p-5">
-              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
-                <MapPin size={15} className="text-gray-400" />
+              <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                <MapPin size={15} className="text-gray-500 dark:text-gray-400" />
                 Top states
               </h3>
               <div className="space-y-2">
@@ -123,23 +123,23 @@ export default function GlobalMap() {
                       'w-full rounded-lg border px-3 py-2.5 text-left transition-colors',
                       selectedState === s.code
                         ? 'border-primary/40 bg-primary/10'
-                        : 'border-transparent hover:bg-surface'
+                        : 'border-transparent hover:bg-white dark:bg-surface'
                     )}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-white">{s.state}</span>
-                      <span className="rounded border border-line bg-canvas px-1.5 py-0.5 font-mono text-[11px] text-gray-300">
+                      <span className="text-sm text-gray-900 dark:text-white">{s.state}</span>
+                      <span className="rounded border border-gray-300 dark:border-line bg-canvas px-1.5 py-0.5 font-mono text-[11px] text-gray-600 dark:text-gray-300">
                         {s.count}
                       </span>
                     </div>
-                    <p className="mt-1 font-mono text-xs text-gray-400">{formatNumber(s.capital)}</p>
+                    <p className="mt-1 font-mono text-xs text-gray-500 dark:text-gray-400">{formatNumber(s.capital)}</p>
                   </button>
                 ))}
               </div>
               {selectedState && (
                 <button
                   onClick={() => setSelectedState(null)}
-                  className="mt-3 flex w-full items-center justify-center gap-1 text-sm text-gray-300 hover:text-white"
+                  className="mt-3 flex w-full items-center justify-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:text-white"
                 >
                   <X size={13} /> Clear filter
                 </button>
@@ -152,13 +152,13 @@ export default function GlobalMap() {
             <div className="card overflow-hidden">
               <div className="relative">
                 <WorldMap projects={filtered} />
-                <div className="absolute bottom-5 right-5 z-10 rounded-xl border border-line bg-surface-raised/90 p-4 backdrop-blur-sm">
-                  <p className="mb-3 text-xs font-semibold text-white">Phase</p>
+                <div className="absolute bottom-5 right-5 z-10 rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-surface-raised/90 p-4 backdrop-blur-sm">
+                  <p className="mb-3 text-xs font-semibold text-gray-900 dark:text-white">Phase</p>
                   <div className="space-y-2">
                     {['live', 'building', 'upcoming'].map((ph) => (
                       <div key={ph} className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full" style={{ background: phaseMeta[ph].color }} />
-                        <span className="text-xs text-gray-300">
+                        <span className="text-xs text-gray-600 dark:text-gray-300">
                           {phaseMeta[ph].label} ({phaseCounts[ph]})
                         </span>
                       </div>
@@ -175,14 +175,14 @@ export default function GlobalMap() {
             </div>
 
             <div className="mt-8 flex items-center justify-between">
-              <p className="text-sm text-gray-300">
-                <span className="font-mono font-medium text-white">{filtered.length}</span> projects
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                <span className="font-mono font-medium text-gray-900 dark:text-white">{filtered.length}</span> projects
                 {selectedState && ` in ${selectedState}`}
               </p>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="rounded-lg border border-line bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                className="rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-surface px-3 py-2 text-sm text-gray-100 transition-colors hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
               >
                 <option value="power">Sort by power</option>
                 <option value="capital">Sort by capital</option>
@@ -209,7 +209,7 @@ export default function GlobalMap() {
             {filtered.length === 0 && (
               <div className="py-20 text-center">
                 <Building2 size={40} className="mx-auto mb-4 text-gray-600" />
-                <p className="text-gray-400">No projects match the current filters.</p>
+                <p className="text-gray-500 dark:text-gray-400">No projects match the current filters.</p>
               </div>
             )}
           </div>
@@ -222,8 +222,8 @@ export default function GlobalMap() {
 function HeaderStat({ label, value, valueClass }) {
   return (
     <div className="text-right">
-      <p className={cn('font-mono text-2xl font-semibold', valueClass || 'text-white')}>{value}</p>
-      <p className="text-xs text-gray-400">{label}</p>
+      <p className={cn('font-mono text-2xl font-semibold', valueClass || 'text-gray-900 dark:text-white')}>{value}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400">{label}</p>
     </div>
   );
 }
@@ -231,12 +231,12 @@ function HeaderStat({ label, value, valueClass }) {
 function MapStat({ icon: Icon, label, value, valueClass }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-canvas text-gray-300">
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 dark:border-line bg-canvas text-gray-600 dark:text-gray-300">
         <Icon size={16} />
       </div>
       <div>
-        <p className="text-xs text-gray-400">{label}</p>
-        <p className={cn('font-mono text-sm font-semibold', valueClass || 'text-white')}>{value}</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400">{label}</p>
+        <p className={cn('font-mono text-sm font-semibold', valueClass || 'text-gray-900 dark:text-white')}>{value}</p>
       </div>
     </div>
   );

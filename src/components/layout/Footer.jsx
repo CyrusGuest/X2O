@@ -34,12 +34,12 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-line bg-canvas">
+    <footer className="relative border-t border-gray-200 bg-white dark:border-line dark:bg-canvas">
       <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
           <div className="col-span-2">
             <Logo />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-300">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-600 dark:text-gray-300">
               The world's largest tokenized marketplace accelerating the future of AI
               infrastructure — the coordination layer helping capital, builders, utilities
               and governments work together.
@@ -47,7 +47,7 @@ export default function Footer() {
             <div className="mt-4">
               <a
                 href="mailto:support@xsolut.ai"
-                className="inline-flex items-center gap-2 text-sm text-gray-300 transition-colors hover:text-white"
+                className="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
               >
                 <Mail size={14} />
                 support@xsolut.ai
@@ -59,7 +59,7 @@ export default function Footer() {
                 href="https://www.facebook.com/share/1MeH5vsb2f/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-gray-300 transition-colors hover:border-gray-600 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 text-gray-600 transition-colors hover:border-gray-400 hover:text-gray-900 dark:border-line dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-white"
                 aria-label="Facebook"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ export default function Footer() {
                 href="https://www.instagram.com/XSolutAI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-gray-300 transition-colors hover:border-gray-600 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 text-gray-600 transition-colors hover:border-gray-400 hover:text-gray-900 dark:border-line dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-white"
                 aria-label="Instagram"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function Footer() {
                 href="https://twitter.com/XSolutAI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-gray-300 transition-colors hover:border-gray-600 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-300 text-gray-600 transition-colors hover:border-gray-400 hover:text-gray-900 dark:border-line dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-white"
                 aria-label="Twitter/X"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -95,13 +95,13 @@ export default function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-[13px] font-medium text-white">{col.title}</h4>
+              <h4 className="text-[13px] font-medium text-gray-900 dark:text-white">{col.title}</h4>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-[13px] text-gray-300 transition-colors hover:text-white"
+                      className="text-[13px] text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                     >
                       {link.name}
                     </Link>
@@ -112,16 +112,16 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 space-y-4 border-t border-line pt-8">
-          <p className="max-w-3xl text-xs leading-relaxed text-gray-500">
+        <div className="mt-14 space-y-4 border-t border-gray-200 pt-8 dark:border-line">
+          <p className="max-w-3xl text-xs leading-relaxed text-gray-500 dark:text-gray-500">
             XSolut is an infrastructure marketplace and intelligence platform. Tokenization
             provides a secure digital representation of real-world infrastructure records.
             Any investment-related functionality would require appropriate legal and
             regulatory compliance. Metrics shown are illustrative demo data.
           </p>
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-            <p className="text-[13px] text-gray-400">© 2026 XSolut. All rights reserved.</p>
-            <div className="flex items-center gap-2 text-[13px] text-gray-400">
+            <p className="text-[13px] text-gray-500 dark:text-gray-400">© 2026 XSolut. All rights reserved.</p>
+            <div className="flex items-center gap-2 text-[13px] text-gray-500 dark:text-gray-400">
               <span className="h-1.5 w-1.5 rounded-full bg-status-live" />
               All systems operational
             </div>

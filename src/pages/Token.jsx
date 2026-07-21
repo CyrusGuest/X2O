@@ -114,7 +114,7 @@ export default function Token() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 + i * 0.1 }}
-                  className="absolute flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-2.5 py-1 text-[11px] text-gray-300 backdrop-blur-sm"
+                  className="absolute flex items-center gap-1.5 rounded-full border border-gray-300 dark:border-line bg-white dark:bg-surface/70 px-2.5 py-1 text-[11px] text-gray-600 dark:text-gray-300 backdrop-blur-sm"
                   style={{ left: `${n.x}%`, top: `${n.y}%`, transform: 'translate(-50%, -50%)' }}
                 >
                   <Icon size={11} className="text-primary-light" />
@@ -139,11 +139,11 @@ export default function Token() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto mt-8 max-w-3xl text-center"
           >
-            <p className="text-sm font-medium uppercase tracking-widest text-gray-400">The XSolut Token</p>
-            <h1 className="mt-4 text-balance text-5xl font-semibold leading-[1.05] tracking-tightest text-white sm:text-6xl lg:text-7xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">The XSolut Token</p>
+            <h1 className="mt-4 text-balance text-5xl font-semibold leading-[1.05] tracking-tightest text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
               The Token at the <span className="text-gradient-accent">Center</span> of It All.
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-gray-300">
+            <p className="mx-auto mt-6 max-w-xl text-balance text-lg leading-relaxed text-gray-600 dark:text-gray-300">
               A community-powered digital utility that helps connect people, projects, and
               participation across the XSolut ecosystem.
             </p>
@@ -171,7 +171,7 @@ export default function Token() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="whitespace-nowrap rounded-lg border border-line bg-surface px-3.5 py-2 text-[13px] text-gray-200"
+                    className="whitespace-nowrap rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-surface px-3.5 py-2 text-[13px] text-gray-200"
                   >
                     {m}
                   </motion.span>
@@ -196,10 +196,10 @@ export default function Token() {
             const Icon = u.icon;
             return (
               <TiltCard key={u.text} className="card glow-border card-hover group flex items-start gap-4 p-6">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-line bg-canvas text-primary-light">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-canvas text-primary-light">
                   <Icon size={20} />
                 </span>
-                <p className="pt-1.5 text-[15px] font-medium leading-snug text-white">{u.text}</p>
+                <p className="pt-1.5 text-[15px] font-medium leading-snug text-gray-900 dark:text-white">{u.text}</p>
               </TiltCard>
             );
           })}
@@ -243,7 +243,7 @@ export default function Token() {
           </div>
           <Reveal className="flex flex-wrap gap-3">
             {audiences.map((a) => (
-              <span key={a} className="glass sweep flex items-center gap-2 rounded-full px-4 py-2.5 text-sm text-white">
+              <span key={a} className="glass sweep flex items-center gap-2 rounded-full px-4 py-2.5 text-sm text-gray-900 dark:text-white">
                 <Users size={14} className="text-primary-light" />
                 {a}
               </span>
@@ -285,11 +285,11 @@ export default function Token() {
             const Icon = p.icon;
             return (
               <TiltCard key={p.title} className="card glow-border card-hover p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-canvas text-primary-light">
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-gray-300 dark:border-line bg-white dark:bg-canvas text-primary-light">
                   <Icon size={20} />
                 </span>
-                <h3 className="mt-5 text-[15px] font-semibold tracking-tight text-white">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-300">{p.desc}</p>
+                <h3 className="mt-5 text-[15px] font-semibold tracking-tight text-gray-900 dark:text-white">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{p.desc}</p>
               </TiltCard>
             );
           })}
@@ -301,10 +301,10 @@ export default function Token() {
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,114,245,0.16),transparent_65%)]" />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 py-28 text-center sm:px-6">
           <TokenObject size={120} />
-          <h2 className="mt-8 text-balance text-4xl font-semibold tracking-tightest text-white sm:text-5xl">
+          <h2 className="mt-8 text-balance text-4xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-5xl">
             One component of a much larger platform.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-gray-300">
+          <p className="mx-auto mt-5 max-w-xl text-lg text-gray-600 dark:text-gray-300">
             The token coordinates AI infrastructure and digital participation — a foundation for
             long-term, community-powered growth.
           </p>
@@ -334,7 +334,7 @@ export default function Token() {
 
 function Section({ children, muted }) {
   return (
-    <section className={'relative border-b border-line ' + (muted ? 'bg-surface/20' : '')}>
+    <section className={'relative border-b border-line ' + (muted ? 'bg-white dark:bg-surface/20' : '')}>
       <div className="mx-auto max-w-[1400px] px-4 py-24 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -343,11 +343,11 @@ function Section({ children, muted }) {
 function SectionHead({ eyebrow, title, children, center }) {
   return (
     <div className={center ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
-      <p className="text-sm font-medium uppercase tracking-widest text-gray-400">{eyebrow}</p>
-      <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tightest text-white sm:text-5xl">
+      <p className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">{eyebrow}</p>
+      <h2 className="mt-3 text-balance text-4xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-5xl">
         {title}
       </h2>
-      {children && <p className="mt-5 text-lg leading-relaxed text-gray-300">{children}</p>}
+      {children && <p className="mt-5 text-lg leading-relaxed text-gray-600 dark:text-gray-300">{children}</p>}
     </div>
   );
 }

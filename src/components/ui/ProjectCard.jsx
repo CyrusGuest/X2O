@@ -28,15 +28,15 @@ export default function ProjectCard({ project }) {
         className="group card glow-border card-hover relative flex h-full flex-col overflow-hidden"
       >
         {/* Image */}
-        <div className="relative h-44 overflow-hidden border-b border-line">
+        <div className="relative h-44 overflow-hidden border-b border-gray-200 dark:border-line">
           <img
             src={project.image}
             alt={project.name}
             loading="lazy"
             className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-90 group-hover:grayscale-0 group-hover:scale-[1.04]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
-          <div className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-surface dark:via-surface/20" />
+          <div className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm dark:border-white/15 dark:bg-black/50">
             <CategoryIcon category={project.category} size={12} />
             {cat?.label}
           </div>
@@ -54,25 +54,25 @@ export default function ProjectCard({ project }) {
         <div className="flex flex-1 flex-col p-5">
           <div className="flex items-start justify-between gap-2">
             <div>
-              <h3 className="text-[15px] font-semibold tracking-tight text-white">{project.name}</h3>
-              <p className="mt-1 flex items-center gap-1.5 text-[13px] text-gray-300">
-                <MapPin size={13} className="text-gray-400" />
+              <h3 className="text-[15px] font-semibold tracking-tight text-gray-900 dark:text-white">{project.name}</h3>
+              <p className="mt-1 flex items-center gap-1.5 text-[13px] text-gray-600 dark:text-gray-300">
+                <MapPin size={13} className="text-gray-500 dark:text-gray-400" />
                 {project.city}, {project.stateCode}
               </p>
             </div>
             <ArrowUpRight
               size={18}
-              className="shrink-0 text-gray-500 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white"
+              className="shrink-0 text-gray-400 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gray-900 dark:text-gray-500 dark:group-hover:text-white"
             />
           </div>
 
           {/* Funding */}
           <div className="mt-4">
             <div className="mb-1.5 flex items-center justify-between text-[11px]">
-              <span className="uppercase tracking-wide text-gray-400">Funding · {project.fundingStage}</span>
-              <span className="font-mono text-gray-200">{project.fundingPct}%</span>
+              <span className="uppercase tracking-wide text-gray-500 dark:text-gray-400">Funding · {project.fundingStage}</span>
+              <span className="font-mono text-gray-700 dark:text-gray-200">{project.fundingPct}%</span>
             </div>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-hover">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-300 dark:bg-surface-hover">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light"
                 style={{ width: `${project.fundingPct}%` }}
@@ -81,7 +81,7 @@ export default function ProjectCard({ project }) {
           </div>
 
           {/* Stats */}
-          <div className="mt-auto grid grid-cols-3 gap-3 border-t border-line pt-4">
+          <div className="mt-auto grid grid-cols-3 gap-3 border-t border-gray-200 pt-4 dark:border-line">
             <Stat label="Power">
               {project.powerCapacityMw ? (
                 <span className="flex items-center gap-1">
@@ -106,8 +106,8 @@ export default function ProjectCard({ project }) {
 function Stat({ label, children, valueClass }) {
   return (
     <div>
-      <p className="text-[11px] uppercase tracking-wide text-gray-400">{label}</p>
-      <p className={cn('mt-1 font-mono text-[13px] font-medium', valueClass || 'text-white')}>
+      <p className="text-[11px] uppercase tracking-wide text-gray-500 dark:text-gray-400">{label}</p>
+      <p className={cn('mt-1 font-mono text-[13px] font-medium', valueClass || 'text-gray-900 dark:text-white')}>
         {children}
       </p>
     </div>

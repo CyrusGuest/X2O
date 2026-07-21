@@ -107,13 +107,6 @@ export const businessModel = [
   'Enterprise Software',
   'Intelligence Subscriptions',
   'Government Contracts',
-  'Supplier Subscriptions',
   'API Access',
-  'Project Verification',
-  'Analytics',
-  'Enterprise Dashboards',
-  'Compliance Tools',
   'Data Licensing',
-  'Premium Research',
-  'Infrastructure Indices',
 ];

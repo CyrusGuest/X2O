@@ -5,6 +5,7 @@ import { Search, ArrowRight, Menu, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import Button from '../ui/Button';
 import Logo from './Logo';
+import SearchModal from '../SearchModal';
 
 const navigation = [
   { name: 'Marketplace', href: '/marketplace' },
@@ -19,6 +20,7 @@ export default function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -30,6 +32,19 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
+
+  // Keyboard shortcut for search (Cmd+K or Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const isActive = (href) =>
     href === '/' ? location.pathname === '/' : location.pathname.startsWith(href);
@@ -95,7 +110,10 @@ export default function Navbar() {
             <span className="h-4 w-px bg-line" />
           </span>
 
-          <button className="hidden items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-gray-400 transition-colors hover:border-gray-600 hover:text-gray-200 lg:flex">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="hidden items-center gap-2 rounded-lg border border-line bg-surface px-3 py-2 text-sm text-gray-400 transition-colors hover:border-gray-600 hover:text-gray-200 lg:flex"
+          >
             <Search size={15} />
             <span>Search infrastructure…</span>
             <kbd className="ml-3 rounded border border-line bg-canvas px-1.5 py-0.5 font-mono text-[11px] text-gray-400">
@@ -103,11 +121,6 @@ export default function Navbar() {
             </kbd>
           </button>
 
-          <Link to="/marketplace" className="hidden sm:block">
-            <Button variant="ghost" size="md">
-              Sign in
-            </Button>
-          </Link>
           <Link to="/marketplace" className="hidden sm:block">
             <Button size="md">
               Join Early Access
@@ -157,11 +170,6 @@ export default function Navbar() {
               )}
               <div className="mt-4 space-y-2 border-t border-line pt-4">
                 <Link to="/marketplace">
-                  <Button variant="ghost" className="w-full justify-center">
-                    Sign in
-                  </Button>
-                </Link>
-                <Link to="/marketplace">
                   <Button className="w-full justify-center">
                     Join Early Access
                     <ArrowRight size={15} />
@@ -172,6 +180,9 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }

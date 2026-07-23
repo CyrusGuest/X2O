@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Heart } from 'lucide-react';
 import { containerVariants, itemVariants } from '../animations/variants';
 import TiltCard from '../components/ui/TiltCard';
-import { featured, more } from '../data/endorsements';
+import { featured, people, more } from '../data/endorsements';
 
 function Mark({ letter, color, size = 'lg' }) {
   const dim = size === 'lg' ? 'h-16 w-16 text-3xl' : 'h-12 w-12 text-xl';
@@ -87,6 +87,45 @@ export default function Endorsements() {
                     </div>
                     <p className="mt-6 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">{c.blurb}</p>
                   </a>
+                </TiltCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Influential People */}
+      <section className="border-b border-line bg-gradient-to-br from-primary/5 to-transparent">
+        <div className="mx-auto max-w-[1400px] px-4 py-20 sm:px-6 lg:px-8">
+          <p className="mb-8 text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">
+            Visionary Leaders
+          </p>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="grid gap-6 lg:grid-cols-2"
+          >
+            {people.map((p) => (
+              <motion.div key={p.name} variants={itemVariants}>
+                <TiltCard className="card glow-border card-hover h-full p-8" max={5}>
+                  <div className="flex h-full flex-col">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <Mark letter={p.letter} color={p.color} />
+                        <div>
+                          <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                            {p.name}
+                          </h2>
+                          <p className="mt-1 text-sm" style={{ color: p.color }}>
+                            {p.tag}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="mt-6 text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">{p.blurb}</p>
+                  </div>
                 </TiltCard>
               </motion.div>
             ))}

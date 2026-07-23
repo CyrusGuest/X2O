@@ -28,6 +28,7 @@ import ProjectStory from '../components/token/ProjectStory';
 import BlueprintNetwork from '../components/token/BlueprintNetwork';
 import SectionConnector from '../components/token/SectionConnector';
 import CursorGlow from '../components/token/CursorGlow';
+import JupiterSwap from '../components/trading/JupiterSwap';
 
 /* ── Hero background infrastructure nodes (percent coords around center) ── */
 const heroNodes = [
@@ -184,6 +185,22 @@ export default function Token() {
           </div>
         </div>
       </section>
+
+      {/* ══ Trade Section — Jupiter Swap Integration ══════ */}
+      <Section muted>
+        <SectionHead eyebrow="Trade" title="Swap tokens instantly." center>
+          Get X2O tokens directly through Jupiter's decentralized exchange aggregator —
+          the best prices across all Solana DEXs.
+        </SectionHead>
+        <Reveal className="mx-auto mt-12 max-w-2xl">
+          <JupiterSwap
+            variant="default"
+            defaultInputMint="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v" // USDC as base
+            defaultOutputMint="USCRdwZP5UkKhJzhWuD7XjTUviHBtZJbLG7XpbKng9S" // X2O as quote
+            fixedOutputMint={false}
+          />
+        </Reveal>
+      </Section>
 
       {/* ══ Section 2 — Built for Utility ═════════════════ */}
       <Section>

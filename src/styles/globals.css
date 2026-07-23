@@ -94,7 +94,17 @@
   }
 
   /* Gradient text — used on hero + numbers */
+  /* Light mode gradient with dark colors */
   .text-gradient {
+    background: linear-gradient(180deg, #0f172a 0%, rgba(15, 23, 42, 0.65) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Dark mode gradient with light colors */
+  html.dark .text-gradient {
     background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.65) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -102,7 +112,18 @@
     color: transparent;
   }
 
+  /* Light mode gradient with darker colors for contrast */
   .text-gradient-accent {
+    background: linear-gradient(90deg, #1e293b 0%, #3291ff 55%, #8a63d2 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Dark mode gradient with lighter colors */
+  html.dark .text-gradient-accent {
     background: linear-gradient(90deg, #fff 0%, #3291ff 55%, #8a63d2 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -278,6 +299,13 @@
 
   /* Glassmorphism panel */
   .glass {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  html.dark .glass {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);

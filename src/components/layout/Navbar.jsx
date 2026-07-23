@@ -14,7 +14,6 @@ const navigation = [
   { name: 'Token', href: '/token' },
   { name: 'Endorsements', href: '/endorsements' },
   { name: 'Intelligence', hash: '#intelligence' },
-  { name: 'Categories', hash: '#categories' },
 ];
 
 export default function Navbar() {

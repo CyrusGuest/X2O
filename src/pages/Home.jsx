@@ -103,14 +103,14 @@ export default function Home() {
 
             <motion.h1
               variants={itemVariants}
-              className="mt-4 sm:mt-6 text-balance text-[2.5rem] font-semibold leading-[1.1] tracking-tightest text-gray-900 dark:text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-[80px]"
+              className="mt-4 sm:mt-6 text-balance text-[2.5rem] font-semibold leading-[1.1] tracking-tightest text-gray-900 dark:text-white sm:text-5xl md:text-6xl lg:text-[80px]"
             >
               Building America's <span className="text-gradient-accent">AI Future</span>.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="mt-4 sm:mt-6 max-w-xl text-balance text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-700 dark:text-gray-200"
+              className="mt-4 sm:mt-6 max-w-xl text-balance text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-200"
             >
               The world's largest tokenized marketplace helping accelerate AI
               infrastructure — from data centers and power generation to cooling,
@@ -167,7 +167,7 @@ export default function Home() {
                   <span className="relative flex h-2 w-2 rounded-full bg-yellow-500" />
                 </div>
                 <div>
-                  <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-gray-900 dark:text-white">Preview: Network Dashboard</h3>
+                  <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">Preview: Network Dashboard</h3>
                   <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
                     Coming soon - Sample data preview
                   </p>
@@ -227,7 +227,7 @@ export default function Home() {
 
           {/* Show more metrics expandable on mobile */}
           <details className="md:hidden mt-3">
-            <summary className="flex items-center justify-center gap-2 py-2 text-xs text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:text-white transition-colors">
+            <summary className="flex items-center justify-center gap-2 py-2 text-xs text-gray-500 dark:text-gray-400 cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors">
               <span>View all metrics</span>
               <ChevronDown size={14} />
             </summary>
@@ -439,16 +439,16 @@ export default function Home() {
               </p>
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Every layer of{' '}
+              Browse by{' '}
               <span className="relative">
                 <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-light/20 blur-2xl" />
                 <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
-                  infrastructure
+                  category
                 </span>
               </span>
             </h2>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              14 categories · 5,184+ suppliers · 50 states
+              Explore 160+ infrastructure projects across 14 sectors
             </p>
           </div>
 
@@ -1019,7 +1019,7 @@ export default function Home() {
                   className="group relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-canvas border border-gray-300 dark:border-line/50 text-sm text-gray-700 dark:text-gray-200 hover:border-primary/30 hover:text-gray-900 dark:text-white transition-all cursor-default">
+                  <span className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-canvas border border-gray-300 dark:border-line/50 text-sm text-gray-700 dark:text-gray-200 hover:border-primary/30 hover:text-gray-900 dark:hover:text-white transition-all cursor-default">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary-light/60 group-hover:bg-primary-light animate-pulse" />
                     {signal}
                   </span>
@@ -1755,7 +1755,7 @@ export default function Home() {
                         }`} />
                       </div>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-white transition-colors">
+                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                       {b}
                     </p>
                     {/* Mobile: Revenue potential indicator */}
@@ -1922,7 +1922,7 @@ export default function Home() {
                     </motion.div>
                   </div>
 
-                  <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:text-white transition-colors">
+                  <p className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                     {org.name}
                   </p>
 

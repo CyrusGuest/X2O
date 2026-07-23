@@ -1,0 +1,51 @@
+{
+  "Comment": "Update DNS to point to our S3/CloudFront distribution",
+  "Changes": [
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "www.xsolut.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "d1vy5294qkp823.cloudfront.net"}
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "xsolut.ai",
+        "Type": "A",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d1vy5294qkp823.cloudfront.net",
+          "EvaluateTargetHealth": false
+        }
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "www.xsolut.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "d3q2uwh65jvr7m.cloudfront.net"}
+        ]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "xsolut.ai",
+        "Type": "A",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d3q2uwh65jvr7m.cloudfront.net",
+          "EvaluateTargetHealth": false
+        }
+      }
+    }
+  ]
+}

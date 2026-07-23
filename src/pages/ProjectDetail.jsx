@@ -24,6 +24,7 @@ import {
 import Button from '../components/ui/Button';
 import CategoryIcon from '../components/ui/CategoryIcon';
 import WorldMap from '../components/sections/WorldMap';
+import TradingWidget from '../components/trading/TradingWidget';
 import projects from '../data/projects.json';
 import { categoryMap, phaseOf, phaseMeta, intelligenceSignals } from '../data/platform';
 import { formatNumber, cn } from '../utils/cn';
@@ -131,9 +132,20 @@ export default function ProjectDetail() {
                     {phaseMeta[phase].label}
                   </span>
                 </div>
-                <h1 className="mt-4 text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-6xl">
-                  {project.name}
-                </h1>
+                <div className="mt-4 flex items-center gap-4">
+                  {project.logo && (
+                    <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-white/90 backdrop-blur-sm dark:border-white/15 dark:bg-black/80">
+                      <img
+                        src={project.logo}
+                        alt={`${project.name} logo`}
+                        className="h-14 w-14 object-contain"
+                      />
+                    </div>
+                  )}
+                  <h1 className="text-5xl font-semibold tracking-tightest text-gray-900 dark:text-white sm:text-6xl">
+                    {project.name}
+                  </h1>
+                </div>
                 <p className="mt-3 flex items-center gap-2 text-lg text-gray-200">
                   <MapPin size={18} className="text-gray-500 dark:text-gray-400" />
                   {project.city}, {project.state}
@@ -191,29 +203,31 @@ export default function ProjectDetail() {
 
           {/* Sidebar */}
           <div className="col-span-12 space-y-5 lg:col-span-4">
-            <div className="card sticky top-32 p-6">
-              <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Participate</h3>
-              <div className="mt-5 space-y-0">
-                <Row label="Funding" value={`${project.fundingPct}%`} valueClass="text-primary-light" />
-                <Row label="Stage" value={project.fundingStage} />
-                <Row label="Token" value={project.tokenSymbol} mono />
-                <Row label="Timeline" value={project.timeline} last />
+            {/* Trading Widget - Compact */}
+            <div className="sticky top-32 space-y-5">
+              <TradingWidget project={project} variant="compact" />
+
+              <div className="card p-6">
+                <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Project Details</h3>
+                <div className="mt-5 space-y-0">
+                  <Row label="Funding" value={`${project.fundingPct}%`} valueClass="text-primary-light" />
+                  <Row label="Stage" value={project.fundingStage} />
+                  <Row label="Token" value={project.tokenSymbol} mono />
+                  <Row label="Timeline" value={project.timeline} last />
+                </div>
+                <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-white dark:bg-surface-hover">
+                  <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light" style={{ width: `${project.fundingPct}%` }} />
+                </div>
+                <div className="mt-6 space-y-3">
+                  <Button variant="secondary" className="w-full">
+                    <Star size={16} /> Add to Watchlist
+                  </Button>
+                </div>
+                <p className="mt-4 text-[11px] leading-relaxed text-gray-500">
+                  Trading is illustrative and would require appropriate legal and regulatory
+                  compliance.
+                </p>
               </div>
-              <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-white dark:bg-surface-hover">
-                <div className="h-full rounded-full bg-gradient-to-r from-primary to-primary-light" style={{ width: `${project.fundingPct}%` }} />
-              </div>
-              <div className="mt-6 space-y-3">
-                <Button className="w-full">
-                  <DollarSign size={16} /> Join Early Access
-                </Button>
-                <Button variant="secondary" className="w-full">
-                  <Star size={16} /> Add to Watchlist
-                </Button>
-              </div>
-              <p className="mt-4 text-[11px] leading-relaxed text-gray-500">
-                Participation is illustrative and would require appropriate legal and regulatory
-                compliance.
-              </p>
             </div>
 
             <div className="card overflow-hidden">
@@ -431,17 +445,10 @@ function Risk({ rp, level }) {
 function Tokenization({ project }) {
   return (
     <div className="space-y-6">
-      <Panel title="Infrastructure token">
-        <div className="flex items-center gap-4">
-          <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-gray-300 dark:border-line bg-white dark:bg-canvas font-mono text-primary-light">
-            {project.tokenSymbol.slice(0, 2)}
-          </span>
-          <div>
-            <p className="font-mono text-lg font-medium text-gray-900 dark:text-white">{project.tokenSymbol}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">A secure digital representation of this project's records.</p>
-          </div>
-        </div>
-      </Panel>
+      {/* Trading Widget */}
+      <TradingWidget project={project} variant="full" />
+
+      {/* Token Info */}
       <Panel title="What tokenization enables">
         <div className="grid gap-3 sm:grid-cols-2">
           {['Faster settlement', 'Transparent records', 'Digital ownership history', 'Project verification', 'Reduced paperwork', 'Improved interoperability'].map((b) => (

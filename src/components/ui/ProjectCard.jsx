@@ -36,6 +36,19 @@ export default function ProjectCard({ project }) {
             className="h-full w-full object-cover opacity-70 grayscale transition-all duration-500 group-hover:opacity-90 group-hover:grayscale-0 group-hover:scale-[1.04]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-surface dark:via-surface/20" />
+
+          {/* Project Logo */}
+          {project.logo && (
+            <div className="absolute bottom-3 left-3 flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border border-white/20 bg-white/90 backdrop-blur-sm dark:border-white/15 dark:bg-black/80">
+              <img
+                src={project.logo}
+                alt={`${project.name} logo`}
+                className="h-10 w-10 object-contain"
+                loading="lazy"
+              />
+            </div>
+          )}
+
           <div className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full border border-white/15 bg-black/50 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm dark:border-white/15 dark:bg-black/50">
             <CategoryIcon category={project.category} size={12} />
             {cat?.label}

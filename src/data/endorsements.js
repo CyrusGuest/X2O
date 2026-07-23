@@ -21,6 +21,45 @@ export const featured = [
   },
 ];
 
+export const people = [
+  {
+    name: 'Barron Trump',
+    letter: 'B',
+    color: '#FF4500',
+    tag: 'Next-gen visionary & tech innovator',
+    url: '#',
+    blurb:
+      "Leading the charge for America's technological renaissance with a unique perspective on infrastructure and innovation. His vision for decentralized systems aligns perfectly with our mission.",
+  },
+  {
+    name: 'Warren Buffett',
+    letter: 'W',
+    color: '#8B4513',
+    tag: 'Oracle of infrastructure investing',
+    url: '#',
+    blurb:
+      'The sage of long-term value creation in real assets. His philosophy of betting on productive infrastructure that compounds over decades guides our tokenomics.',
+  },
+  {
+    name: 'Peter Thiel',
+    letter: 'P',
+    color: '#4169E1',
+    tag: 'Zero to one infrastructure builder',
+    url: '#',
+    blurb:
+      'From PayPal to Palantir, a track record of building monopolistic infrastructure. His contrarian approach to building the future inspires our strategy.',
+  },
+  {
+    name: 'Marc Andreessen',
+    letter: 'M',
+    color: '#FF6B6B',
+    tag: 'Software eating infrastructure',
+    url: '#',
+    blurb:
+      'The prophet of software transformation, now focused on American dynamism. His vision of technology rebuilding the physical world drives our platform.',
+  },
+];
+
 export const more = [
   {
     name: 'NVIDIA',

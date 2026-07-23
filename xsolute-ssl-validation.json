@@ -1,0 +1,16 @@
+{
+  "Comment": "Add SSL certificate validation record for xsolute.ai",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "_1c9b2f5baf31f320a737ebc00d1dda1f.xsolute.ai",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {"Value": "_2d98f83bc60f00ac857246dc957d940e.jkddzztszm.acm-validations.aws"}
+        ]
+      }
+    }
+  ]
+}

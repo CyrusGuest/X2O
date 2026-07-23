@@ -48,7 +48,7 @@ export default function ProjectStory() {
               {/* Content */}
               <div className="flex flex-1 items-center justify-between gap-4 rounded-xl border border-line bg-surface p-4">
                 <div>
-                  <p className="text-[15px] font-semibold tracking-tight text-white">{m.t}</p>
+                  <p className="text-[15px] font-semibold tracking-tight text-gray-900 dark:text-white">{m.t}</p>
                   <p className="mt-0.5 text-[13px] text-gray-400">{m.note}</p>
                 </div>
                 <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-status-live/25 bg-status-live/10 px-2.5 py-1 text-[11px] font-medium text-status-live">

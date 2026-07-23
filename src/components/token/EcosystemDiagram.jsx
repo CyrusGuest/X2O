@@ -87,7 +87,7 @@ export default function EcosystemDiagram({ size = 500 }) {
           >
             <div className="glass flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-1.5 shadow-glow">
               <Icon size={13} className="text-primary-light" />
-              <span className="text-[12px] font-medium text-white">{p.label}</span>
+              <span className="text-[12px] font-medium text-gray-900 dark:text-white">{p.label}</span>
             </div>
           </motion.div>
         );

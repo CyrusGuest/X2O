@@ -56,7 +56,7 @@ export default function GenomeStack() {
                   )}
                 </span>
                 <div>
-                  <p className={'text-[15px] font-semibold tracking-tight ' + (l.base ? 'text-white' : 'text-white')}>
+                  <p className={'text-[15px] font-semibold tracking-tight ' + (l.base ? 'text-primary dark:text-primary-light' : 'text-gray-900 dark:text-white')}>
                     {l.label}
                   </p>
                   <p className="text-[12px] text-gray-400">{l.note}</p>

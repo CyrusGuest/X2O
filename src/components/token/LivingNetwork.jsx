@@ -174,7 +174,7 @@ function LiveStat({ value, label }) {
   }, [value, spring]);
   return (
     <div className="bg-canvas px-5 py-5">
-      <motion.p className="font-mono text-2xl font-semibold tracking-tight text-white">{text}</motion.p>
+      <motion.p className="font-mono text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{text}</motion.p>
       <p className="mt-1 text-[13px] text-gray-400">{label}</p>
     </div>
   );

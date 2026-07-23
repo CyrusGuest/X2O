@@ -24,9 +24,8 @@ export const featured = [
 export const people = [
   {
     name: 'Barron Trump',
-    initials: 'BT',
+    image: '/leaders/barron.jpg',
     color: '#FF4500',
-    bgColor: '#FF4500',
     tag: 'Next-gen visionary & tech innovator',
     url: '#',
     blurb:
@@ -34,9 +33,8 @@ export const people = [
   },
   {
     name: 'Warren Buffett',
-    initials: 'WB',
+    image: '/leaders/warren.webp',
     color: '#8B4513',
-    bgColor: '#8B4513',
     tag: 'Oracle of infrastructure investing',
     url: '#',
     blurb:
@@ -44,9 +42,8 @@ export const people = [
   },
   {
     name: 'Peter Thiel',
-    initials: 'PT',
+    image: '/leaders/peter.jpg',
     color: '#4169E1',
-    bgColor: '#4169E1',
     tag: 'Zero to one infrastructure builder',
     url: '#',
     blurb:
@@ -54,9 +51,8 @@ export const people = [
   },
   {
     name: 'Marc Andreessen',
-    initials: 'MA',
+    image: '/leaders/marc.jpg',
     color: '#FF6B6B',
-    bgColor: '#FF6B6B',
     tag: 'Software eating infrastructure',
     url: '#',
     blurb:

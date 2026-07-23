@@ -113,15 +113,16 @@ export default function Endorsements() {
                   <div className="flex h-full flex-col">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-4">
-                        {p.image ? (
-                          <img
-                            src={p.image}
-                            alt={p.name}
-                            className="h-16 w-16 rounded-xl object-cover shadow-lg"
+                        {p.initials ? (
+                          <div
+                            className="flex h-16 w-16 items-center justify-center rounded-xl text-2xl font-bold text-white shadow-lg"
                             style={{
-                              border: `2px solid ${p.color}`,
+                              background: `linear-gradient(135deg, ${p.bgColor}, ${p.bgColor}dd)`,
+                              boxShadow: `0 4px 20px -4px ${p.bgColor}66`
                             }}
-                          />
+                          >
+                            {p.initials}
+                          </div>
                         ) : (
                           <Mark letter={p.letter} color={p.color} />
                         )}

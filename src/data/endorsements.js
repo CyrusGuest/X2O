@@ -24,7 +24,7 @@ export const featured = [
 export const people = [
   {
     name: 'Barron Trump',
-    letter: 'B',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Barron_Trump_2020.jpg/440px-Barron_Trump_2020.jpg',
     color: '#FF4500',
     tag: 'Next-gen visionary & tech innovator',
     url: '#',
@@ -33,7 +33,7 @@ export const people = [
   },
   {
     name: 'Warren Buffett',
-    letter: 'W',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Warren_Buffett_KU_Visit.jpg/440px-Warren_Buffett_KU_Visit.jpg',
     color: '#8B4513',
     tag: 'Oracle of infrastructure investing',
     url: '#',
@@ -42,7 +42,7 @@ export const people = [
   },
   {
     name: 'Peter Thiel',
-    letter: 'P',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Peter_Thiel_TechCrunch_2008.jpg/440px-Peter_Thiel_TechCrunch_2008.jpg',
     color: '#4169E1',
     tag: 'Zero to one infrastructure builder',
     url: '#',
@@ -51,7 +51,7 @@ export const people = [
   },
   {
     name: 'Marc Andreessen',
-    letter: 'M',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Marc_Andreessen-9.jpg/440px-Marc_Andreessen-9.jpg',
     color: '#FF6B6B',
     tag: 'Software eating infrastructure',
     url: '#',
